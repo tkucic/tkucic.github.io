@@ -1,30 +1,54 @@
 html, body {
-	width: 100%;
-	margin: 0;
-	padding: 0;
 	font-family: Arial;
-	background-image: url("../img/background.jpg");
+	background-image: url("../img/BackgroundProject.png");
+	background-size: 100%;
 }
+
+body {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* -- Reusable classes -- */
+/* Styling for a button */
+.button {
+	text-align: center;
+	color: #ffffff;
+	text-decoration: none;
+	padding: 20px 20px;
+	background-color: #000000;
+}
+
+
+/* Center something in the middle of the viewport */
+.vcenter {
+	position: relative;
+	top:50%;
+	transform:translateY(-50);
+}
+
+/* Navigation bar */
 .headwrap {
 	display: grid;
-	position: fixed;
-	top: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 0;
 	background-color: #000000;
 	overflow: hidden;
-	width: 100%;
-
+	width: 100%
 }
+
 .headwrap ul {
 	list-style: none;
 	text-align: left;
-
 }
 
 .headwrap ul > li {
 	display: inline-block;
 	float:left;
 	padding: 0;
-
 }
 
 .headwrap a {
@@ -32,44 +56,33 @@ html, body {
 	text-align: center;
 	padding: 15px 30px;
 	text-decoration: none;
-	width: 100%;
-	height: 100%;
 }	
-
 
 .headwrap li a:hover {
 	background-color: #a8a8a8;
 }
 
+/* Contents framework */
 .gridwrap {
 	display: grid;
 	text-align: center;
-	padding-top: 50px;
+	color: white;
+	width: 100%;
 }
 .gridwrap > div {
-	background: #eee;
-	opacity: 0.4;
+	background: #001a33;
 }
 .gridwrap > div:nth-child(odd) {
-	background: #ddd;
+	background: #003566;
 }
 
-.button {
-	text-align: center;
-	color: #ffffff;
-	border: 2px solid #000000;
-	text-decoration: none;
-	padding: 20px 20px;
-	background-color: #000000;
+.gridwrap a:hover {
+	background-color: #a8a8a8;
 }
+
+/* Actual content */
 #home {
 	height: 100vh;
-	background-image: url("../img/work1.jpg");
-}
-.vcenter {
-	position: relative;
-	top:50%;
-	transform:translateY(-50);
 }
 
 #about {
@@ -77,9 +90,30 @@ html, body {
 }
 .aboutwrap {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 40px;
-	text-align: justify;
+	grid-template-columns: 25% 75%;
+	grid-gap: 5px;
+}
+
+.aboutwrap > div {
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: left;
+	padding: 10px;
+	border: 2px; 
+	border-style: solid;
+	border-color: white;
+	border-radius: 10px;
+}
+
+.aboutwrap > h3 {
+	text-align: center;
+}
+
+#education {
+	height: 100vh;	
+}
+#career {
+	height: 100vh;
 }
 	
 #projects {
@@ -93,15 +127,13 @@ html, body {
 #contact {
 	height: 100vh;
 	}
-	
-.footerbar, .content:after {
-	height: 40px;
-}
+
+/* Footerbar */
 .footerbar {
-	width: 100%;
 	background-color: #000000;
-	text-align: center;
 	display: inline-block;
+	width: 100%;
+	text-align: center;
 }
 	
 .footerbar img {
