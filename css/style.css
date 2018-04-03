@@ -21,7 +21,6 @@ body {
 	background-color: #000000;
 }
 
-
 /* Center something in the middle of the viewport */
 .vcenter {
 	position: relative;
@@ -29,6 +28,37 @@ body {
 	transform:translateY(-50);
 }
 
+.tab {
+	overflow: hidden;
+	border: none;
+	background-color: inherit;
+}
+
+.tab button {
+	background-color: inherit;
+	color: white;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+}
+
+.tab button:hover {
+	background-color: #a8a8a8;
+}
+
+.tab button.active {
+	background-color: #a8a8a8;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: none;
+
+}
 /* Navigation bar */
 .headwrap {
 	display: grid;
@@ -110,7 +140,7 @@ body {
 }
 
 #education {
-	height: 100vh;	
+	min-height: 100vh;	
 }
 #career {
 	height: 100vh;
