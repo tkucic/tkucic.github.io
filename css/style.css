@@ -112,15 +112,16 @@ body {
 
 /* Actual content */
 #home {
-	height: 100vh;
+	min-height: 100vh;
 }
 
 #about {
-	height: 100vh;
+	min-height: 100vh;
 }
 .aboutwrap {
 	display: grid;
-	grid-template-columns: 25% 75%;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr;
 	grid-gap: 5px;
 }
 
@@ -143,19 +144,19 @@ body {
 	min-height: 100vh;	
 }
 #career {
-	height: 100vh;
+	min-height: 100vh;
 }
 	
 #projects {
-	height: 100vh;
+	min-height: 100vh;
 	}
 	
 #docs {
-	height: 100vh;
+	min-height: 100vh;
 	}
 	
 #contact {
-	height: 100vh;
+	min-height: 100vh;
 	}
 
 /* Footerbar */
