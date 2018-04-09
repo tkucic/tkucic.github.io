@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<title>Toni Kucic, M.sc.</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="toni kucic automation engineer croatia abb cma cgm plc programming school structured text 800xA control builder hrvatska industrijska automatizacija pomorski fakultet rijeka">
 	<meta name="description" content="This is the personal website of Toni Kucic">
 	
@@ -32,34 +32,36 @@
 	</header>
 
 	<div class="gridwrap">
-		<div id="home">
-			<div class="vcenter">
-				<h3>INDUSTRIAL AUTOMATION PROFESSIONAL WITH FOCUS ON MARINE INDUSTRY</h3>
-				<h1>TONI KUCIC</h1>
-				<hr style="width: 150px">
-				<br>
-				<br>
-				<a class="button" href="#projects">PROJECTS</a>
-				<a class="button" href="#contact">WORK WITH ME</a>
+		<div id="home" class="row">
+			<div class="col-12">
+				<div class="vcenter">
+					<h3>INDUSTRIAL AUTOMATION PROFESSIONAL WITH FOCUS ON MARINE INDUSTRY</h3>
+					<h1>TONI KUCIC</h1>
+					<hr style="width: 150px">
+					<br>
+					<br>
+					<a class="button" href="#projects">PROJECTS</a>
+					<a class="button" href="#contact">WORK WITH ME</a>
+				</div>
 			</div>
 		</div>
 		<div id="about">
 			<h1>ABOUT ME</h1>
-			<div class="contentwrap">
-				<div>
+			<div class="row">
+				<div class="col-3">
 					<img src="../img/tonikucic.png">
 					<h3>AREAS OF EXPERTISE</h3>
 					<hr>
 					<ul>
 						<li>Marine Engineering</li>
-						<li>Electrical Engineering</li>						
+						<li>Electrical Engineering</li>		
 						<li>Industrial automation</li>
 						<li>PLC Programming</li>						
 						<li>Maritime operations</li>
 						<li>Maintenance & Repair</li>
 					</ul>
 				</div>
-				<div>
+				<div class="col-9">
 					<h3>MY STORY</h3>
 					<hr>	
 					<p>I was born 20.5.1989 in a small Croatian town of Rijeka. Rijeka is know for its open and international way of thinking, Ucka mountain, Tourism and the Croatias industry heart, the Shipyard 3.Maj. After electrical high school and university I decided to get experience from the maritime industry. In the three years that followed I moved from being a electrical cadet to electrotechnical officer. On 2016 I decided to return to a shore based job and the perfect place to improve and share my accuired skills was industrial automation.</p>
@@ -71,8 +73,8 @@
 		</div>
 		<div id="education">
 			<h1>EDUCATION</h1>
-			<div class="contentwrap">
-				<div>
+			<div class="row">
+				<div class="col-3">
 					<h4>Certifications</h4>
 					<h3>Electrical</h3>
 					<ul>
@@ -101,7 +103,7 @@
 						<li>ABB Graphic builder</li>
 					</ul>
 				</div>
-				<div>
+				<div class="col-9">
 					<div class="tab">
 						<button class="tablinks" onclick="openTab(event, 'Master')" id="defaultOpenEdu">MASTER</button>
 						<button class="tablinks" onclick="openTab(event, 'Bachelor')">BACHELOR</button>
@@ -147,7 +149,7 @@
 		</div>
 		<div id="career">
 			<h1>CAREER</h1>
-			<div>
+			<div class="col-12">
 				<div class="tab">
 					<button class="tablinks" onclick="openTab(event, 'First')" id="defaultOpenCarr">I</button>
 					<button class="tablinks" onclick="openTab(event, 'Second')">II</button>
@@ -252,83 +254,203 @@
 		</div>
 		<div id="projects">
 			<h1>PROJECTS</h1>
-			<div>
-				<h4>Automated ships steam boiler</h4>
-				<p>
-					What is a steam boiler:
-					Essentially, a boiler is a container into which water can be fed and by the application of heat is evaporated continuously into steam. Steam is raised mainly for heating the heavy fuel oil used to fire the ‘diesel engines’ , for space heating , to power cargo handling pumps and as an aid to cleaning storage tanks and surfaces.
-					This program controls the ignition sequence of the burner in order to create steam. Along with the boiler program a simulator is included to simulate loads and to test the PID regulation.
+			<div class="row">
+				<div class="col-6">
+					<h4>Automated ships steam boiler</h4>
+					<p>
+						What is a steam boiler:
+						Essentially, a boiler is a container into which water can be fed and by the application of heat is evaporated continuously into steam. Steam is raised mainly for heating the heavy fuel oil used to fire the ‘diesel engines’ , for space heating , to power cargo handling pumps and as an aid to cleaning storage tanks and surfaces.
+						This program controls the ignition sequence of the burner in order to create steam. Along with the boiler program a simulator is included to simulate loads and to test the PID regulation.
 
-					Showcase video (v2.0)
-					<a href="https://www.youtube.com/watch?v=-ouNOCi6Tog&t=34s">Here</a>
+						Showcase video (v2.0)
+						<a href="https://www.youtube.com/watch?v=-ouNOCi6Tog&t=34s">Here</a>
 
-					Goal of this program
-					The idea behind of this project is to provide a support project for my bachelor degree paper "Automation of ships steam boiler". When the project is finished the bachelor degree will be accompanied by the complete PLC program and a simulator.
+						Goal of this program
+						The idea behind of this project is to provide a support project for my bachelor degree paper "Automation of ships steam boiler". When the project is finished the bachelor degree will be accompanied by the complete PLC program and a simulator.
 
-					Second intention of the project is to create a reference project that presents my automation skills and as such this project will never be really finished because there is always something to improve.
-					The project can be downloaded from GitHub from <a href="https://github.com/tkucic/AutoSteamBoiler">here.</a>
-				</p>
-			</div>
-			<div>
-				<h4>TKAutomationLib</h4>
-				<p>
-					Codesys library that supports various project of neighbour repositories Version: 1.0
+						Second intention of the project is to create a reference project that presents my automation skills and as such this project will never be really finished because there is always something to improve.
+						The project can be downloaded from GitHub from <a href="https://github.com/tkucic/AutoSteamBoiler">here.</a>
+					</p>
+					<h4>Code snippet:</h4>
+					<pre><code><p class="snippet">
+						IF GVL.LIO.IgnitionSeq &gt; 4 OR GVL.LIO.IgnitionSeq = 0 THEN
+							(* Switch off fuel valve *)
+							vPIDManual	:= TRUE;
+							vMan_Y		:= 0;
 
-					Contents of the library
-					Pump control logic
-					Pump model for simulation
-					Tank control logic
-					Tank model with several inputs for inflow and outflow
-					Workplace with color changing functionality, tabs, navigation and status bar with automatic time reading
-					How to use the library
-					Control logic and simulation model objects:
-					These objects are basically used by calling it using the Input Assistant in your project. Connect the variables to the IOs and compile the program to the PLC. For the visualisations drag and drop the corresponding control objects visualisation into your project and connect the correct variables to the control object.
-					Model objects for simulation should be run on a separate PLC, OPC server or atleast separate PRG. Simulation communication should be done only by IOs.
+						ELSIF GVL.LIO.IgnitionSeq = 3 THEN
+							(* Stabilize ignition *)
+							vPIDManual := TRUE;
+							vMan_Y 	   := GVL.SysCFG.FuelValveStart_pc;
 
-					Workplace
-					WorkplaceHandler function needs to be called in a PRG. Variable arrays need to be created and function block needs to be parametrized with project specific values. Visualization is of size 1980x1024 and should be drag and dropped to an empty visualisation. In the outputs of the WorkplaceHandler there is an array variable in which the first bit dictates which tab should be visible. All project visualisations should have that bit in its "Visible" parameter.
-					Color can be set for the navigation bar, buttons and the status bar by entering hex code RGB when parametrizing WorkplaceHandler function in the format of 16#FFRRGGBB.
+						ELSIF GVL.LIO.IgnitionSeq = 4 THEN
+							IF GVL.IO.DIS.RemoteSW THEN
+								vPIDManual := FALSE;
+								vMan_Y := GVL.IO.AOS.FuelValve;
+							ELSIF NOT GVL.IO.DIS.RemoteSW THEN
+								vPIDManual := TRUE;
+								rtManUp(CLK:=GVL.IO.DIS.ManLoadUP);
+								rtManDown(CLK:=GVL.IO.DIS.ManLoadDown);
+							
+								IF rtManUp.Q THEN
+									vMan_Y := vMan_Y + 1;
+								END_IF
+								IF rtManDown.Q THEN
+									vMan_Y := vMan_Y - 1;
+								END_IF
+							END_IF
+								
+						ELSE
+							vPIDManual	:= TRUE;
+							vMan_Y		:= 0;
+						END_IF;
+
+						FuelController(
+							ACTUAL:= GVL.IO.AIS.SteamPressure, 
+							SET_POINT:= GVL.SysCFG.SteamPressureSP , 
+							KP:= GVL.SysCFG.F_PID_P, 
+							TN:= GVL.SysCFG.F_PID_I, 
+							TV:= GVL.SysCFG.F_PID_D, 
+							Y_MANUAL:= vMan_Y, 
+							Y_OFFSET:= GVL.SysCFG.F_PID_Offset, 
+							Y_MIN:= GVL.SysCFG.F_PID_OutMIN, 
+							Y_MAX:= GVL.SysCFG.F_PID_OutMAX,
+							MANUAL := vPIDManual,
+							RESET:=FALSE , 
+							Y=&gt; GVL.IO.AOS.FuelValve, 
+							LIMITS_ACTIVE=&gt; vPIDLimitActive, 
+							OVERFLOW=&gt;vOverflow );
+
+						SteamDumpController(
+							ACTUAL:= GVL.IO.AIS.SteamPressure, 
+							SET_POINT:= GVL.SysCFG.SteamPressureSP , 
+							KP:= GVL.SysCFG.S_PID_P, 
+							TN:= GVL.SysCFG.S_PID_I, 
+							TV:= GVL.SysCFG.S_PID_D, 
+							Y_MIN:= 0, 
+							Y_MAX:= 100,
+							Y=&gt; GVL.IO.AOS.SteamDumpValve);
+							
+						(* Consumer valve handling *)
+						HFOHeatValve(
+							iOpenedFB:= GVL.IO.DIS.HFOHeatValveOpen , 
+							iClosedFB:= GVL.IO.DIS.HFOHeatValveClosed, 
+							OpenAutoCmd:= vHFOHeatOpenAutoCmd, 
+							CloseAutoCmd:= vHFOHeatCloseAutoCmd, 
+							OpenCmdHMI:= vHFOHeatOpenCmdHMI, 
+							CloseCmdHMI:= vHFOHeatCloseCmdHMI, 
+							SetToAuto:= vHFOHeatSetToAuto, 
+							SetToMan:= vHFOHeatSetToMan, 
+							cfgOpenFailDelay:= GVL.SysCFG.HFOHeatValveOperDelay, 
+							cfgCloseFailDelay:= GVL.SysCFG.HFOHeatValveOperDelay, 
+							cfgFBErrorDelay:= GVL.SysCFG.HFOHeatValveOperDelay, 
+							ValveStatus=&gt; vHFOHeatValveStatus, 
+							ValveIcon=&gt; vHFOHeatValveIcon, 
+							qOpenCmd=&gt; GVL.IO.DOS.HFOHeatValveOpenCmd, 
+							qCloseCmd=&gt; GVL.IO.DOS.HFOHeatValveCloseCmd);
+							
+						HVACHeatValve(
+							iOpenedFB:= GVL.IO.DIS.HVACHeatValveOpen , 
+							iClosedFB:= GVL.IO.DIS.HVACHeatValveClosed, 
+							OpenAutoCmd:= vHVACHeatValveOpenAutoCmd, 
+							CloseAutoCmd:= vHVACHeatValveCloseAutoCmd, 
+							OpenCmdHMI:= vHVACHeatOpenCmdHMI, 
+							CloseCmdHMI:= vHVACHeatCloseCmdHMI, 
+							SetToAuto:= vHVACHeatSetToAuto, 
+							SetToMan:= vHVACHeatSetToMan, 
+							cfgOpenFailDelay:= GVL.SysCFG.HVACHeatValveOperDelay, 
+							cfgCloseFailDelay:= GVL.SysCFG.HVACHeatValveOperDelay, 
+							cfgFBErrorDelay:= GVL.SysCFG.HVACHeatValveOperDelay, 
+							ValveStatus=&gt; vHVACHeatValveStatus, 
+							ValveIcon=&gt; vHVACHeatValveIcon, 
+							qOpenCmd=&gt; GVL.IO.DOS.HVACHeatValveOpenCmd, 
+							qCloseCmd=&gt; GVL.IO.DOS.HVACHeatValveCloseCmd);
+							
+						OperConsValve(
+							iOpenedFB:= GVL.IO.DIS.OperConsValveOpen , 
+							iClosedFB:= GVL.IO.DIS.OperConsValveClosed, 
+							OpenAutoCmd:= vOperConsValveOpenAutoCmd, 
+							CloseAutoCmd:= vOperConsValveCloseAutoCmd, 
+							OpenCmdHMI:= vOperConsOpenCmdHMI, 
+							CloseCmdHMI:= vOperConsCloseCmdHMI, 
+							SetToAuto:= vOperConsSetToAuto, 
+							SetToMan:= vOperConsSetToMan, 
+							cfgOpenFailDelay:= GVL.SysCFG.OperConsValveOperDelay, 
+							cfgCloseFailDelay:= GVL.SysCFG.OperConsValveOperDelay, 
+							cfgFBErrorDelay:= GVL.SysCFG.OperConsValveOperDelay, 
+							ValveStatus=&gt; vOperConsValveStatus, 
+							ValveIcon=&gt; vOperConsValveIcon, 
+							qOpenCmd=&gt; GVL.IO.DOS.OperConsValveOpenCmd, 
+							qCloseCmd=&gt; GVL.IO.DOS.OperConsValveCloseCmd);
+							
+						(* Air flap opening *)
+						GVL.IO.AOS.AirValve := GVL.IO.AOS.FuelValve / GVL.SysCFG.AirToFuelRatio;
+					</p></code></pre>
 					
-					The library is intended to be installed into the Codesys enviroment but it is protected from editing by a password. The library can be downloaded from GitHub from <a href="https://github.com/tkucic/tkautomation_lib">here.</a>
-				</p>
+				</div>
+				<div class="col-6">
+					<h4>TKAutomationLib</h4>
+					<p>
+						Codesys library that supports various project of neighbour repositories Version: 1.0
+
+						Contents of the library
+						Pump control logic
+						Pump model for simulation
+						Tank control logic
+						Tank model with several inputs for inflow and outflow
+						Workplace with color changing functionality, tabs, navigation and status bar with automatic time reading
+						How to use the library
+						Control logic and simulation model objects:
+						These objects are basically used by calling it using the Input Assistant in your project. Connect the variables to the IOs and compile the program to the PLC. For the visualisations drag and drop the corresponding control objects visualisation into your project and connect the correct variables to the control object.
+						Model objects for simulation should be run on a separate PLC, OPC server or atleast separate PRG. Simulation communication should be done only by IOs.
+
+						Workplace
+						WorkplaceHandler function needs to be called in a PRG. Variable arrays need to be created and function block needs to be parametrized with project specific values. Visualization is of size 1980x1024 and should be drag and dropped to an empty visualisation. In the outputs of the WorkplaceHandler there is an array variable in which the first bit dictates which tab should be visible. All project visualisations should have that bit in its "Visible" parameter.
+						Color can be set for the navigation bar, buttons and the status bar by entering hex code RGB when parametrizing WorkplaceHandler function in the format of 16#FFRRGGBB.
+						
+						The library is intended to be installed into the Codesys enviroment but it is protected from editing by a password. The library can be downloaded from GitHub from <a href="https://github.com/tkucic/tkautomation_lib">here.</a>
+					</p>
+				</div>
 			</div>
-			<div>
-				<h4>This website</h4>
-				<p>
-					This website is also intended to show my skills in web design. The website is built from scratch without using any templates and by learning as I go. 
-					Languages used on the webpage are:
-						HTML5
-						JavaScript
-						CSS
-					The whole code is open for use and downloadable from GitHub from <a href="https://github.com/tkucic/website">here.</a>
-				</p>
-			</div>
-			<div>
-				<h4>PLC Programming school</h4>
-				<p>
-					Information about Structured Text programming is scarce to say the least so I have decided to solve this problem and dedicate a online school to teaching ST Code to anyone who wants to learn it.
-					The school is in progress of being built as you are reading this text. It will focus on the IEC61311-3 standard and on Structured Text programming for PLCs. ST Code course will start as a introduction to what it really is and how to use it but after the introduction we will focuse on real life industry problems an we will solve them using structured text programming, functions, simulators and much more.
-				</p>
+			<div class="row">
+				<div class="col-6">
+					<h4>This website</h4>
+					<p>
+						This website is also intended to show my skills in web design. The website is built from scratch without using any templates and by learning as I go. 
+						Languages used on the webpage are:
+							HTML5
+							JavaScript
+							CSS
+						The whole code is open for use and downloadable from GitHub from <a href="https://github.com/tkucic/website">here.</a>
+					</p>
+				</div>
+				<div class="col-6">
+					<h4>PLC Programming school</h4>
+					<p>
+						Information about Structured Text programming is scarce to say the least so I have decided to solve this problem and dedicate a online school to teaching ST Code to anyone who wants to learn it.
+						The school is in progress of being built as you are reading this text. It will focus on the IEC61311-3 standard and on Structured Text programming for PLCs. ST Code course will start as a introduction to what it really is and how to use it but after the introduction we will focuse on real life industry problems an we will solve them using structured text programming, functions, simulators and much more.
+					</p>
+				</div>
 			</div>
 		</div>
 		
 		<div id="docs">
 			<h1>DOCUMENTS AND PUBLICATIONS</h1>
-			<div class="contentwrap">
-				<div>
+			<div class="row">
+				<div class="col-4">
 					<i class="icon-book-open medium-icon"></i>
 					<h3>Curriculum Vitae</h3>
 					<a href="docs/cv_tonikucic.pdf" target="new"><button>English CV</button></a>
 					<a href="docs/cv_tonikucic_FI.pdf" target="new"><button>Suomen CV</button></a>
 					<a href="docs/cv_tonikucic_HR.pdf" target="new"><button>Hrvatski CV</button></a>
 				</div>
-				<div>
+				<div class="col-4">
 					<i class="icon-desktop medium-icon"></i>
 					<h3>Disertations</h3>
 					<a href="docs/mr.sc.Toni_Kucic_-_Projektiranje_I_Primjena_Dinamickih_odobalnih_baza.pdf" target="new"><button>Master Disertation</button></a>
 					<a href="docs/bsc.Toni_Kucic_-_Automatizacija_paljenja_brodskog_parnog_kotla.pdf" target="new"><button>Bachelor disertation</button></a>
 				</div>
-				<div>
+				<div class="col-4">
 					<i class="icon-cloud medium-icon"></i>
 					<h3>Articles</h3>
 					<a href="https://www.linkedin.com/pulse/electrical-troubleshooting-toni-ku%C4%8Di%C4%87?trk=prof-post" target="new"><button>Electrical troubleshooting</button></a>
