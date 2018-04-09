@@ -1,4 +1,17 @@
-function openEdu(evt, tabName) {
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function respNav() {
+    var x = document.getElementById("topnav");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+}
+
+// Get the element with id="defaultOpenEdu" and id="defaultOpenCarr" andclick on it
+document.getElementById("defaultOpenEdu").click();
+document.getElementById("defaultOpenCarr").click();
+function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
