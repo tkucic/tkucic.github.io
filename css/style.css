@@ -151,9 +151,9 @@ body {
 [class*="col-"] {
     float: left;
     padding: 15px;
-	border: 3px solid white;
+	/*border: 3px solid white;
 	border-radius: 5px;
-	min-height: 100vh;
+	min-height: 100vh;*/
 }
 
 .row::after {
@@ -198,6 +198,10 @@ body {
 #projects {
 	min-height: 100vh;
 	}
+#projects p {
+	overflow: auto;
+	max-height: 100vh;
+}
 	
 #docs {
 	min-height: 100vh;
@@ -217,8 +221,8 @@ body {
 }
 	
 .footerbar img {
-	height: 40px;
-	width: 40px;
+	width: 50px;
+	height: auto;
 	padding-left: 25px;
 }
 

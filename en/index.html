@@ -272,119 +272,119 @@
 						The project can be downloaded from GitHub from <a href="https://github.com/tkucic/AutoSteamBoiler">here.</a>
 					</p>
 					<h4>Code snippet:</h4>
-					<pre><code><p class="snippet">
-						IF GVL.LIO.IgnitionSeq &gt; 4 OR GVL.LIO.IgnitionSeq = 0 THEN
-							(* Switch off fuel valve *)
-							vPIDManual	:= TRUE;
-							vMan_Y		:= 0;
+					<pre><code><p>
+IF GVL.LIO.IgnitionSeq &gt; 4 OR GVL.LIO.IgnitionSeq = 0 THEN
+	(* Switch off fuel valve *)
+	vPIDManual	:= TRUE;
+	vMan_Y		:= 0;
 
-						ELSIF GVL.LIO.IgnitionSeq = 3 THEN
-							(* Stabilize ignition *)
-							vPIDManual := TRUE;
-							vMan_Y 	   := GVL.SysCFG.FuelValveStart_pc;
+ELSIF GVL.LIO.IgnitionSeq = 3 THEN
+	(* Stabilize ignition *)
+	vPIDManual := TRUE;
+	vMan_Y 	   := GVL.SysCFG.FuelValveStart_pc;
 
-						ELSIF GVL.LIO.IgnitionSeq = 4 THEN
-							IF GVL.IO.DIS.RemoteSW THEN
-								vPIDManual := FALSE;
-								vMan_Y := GVL.IO.AOS.FuelValve;
-							ELSIF NOT GVL.IO.DIS.RemoteSW THEN
-								vPIDManual := TRUE;
-								rtManUp(CLK:=GVL.IO.DIS.ManLoadUP);
-								rtManDown(CLK:=GVL.IO.DIS.ManLoadDown);
-							
-								IF rtManUp.Q THEN
-									vMan_Y := vMan_Y + 1;
-								END_IF
-								IF rtManDown.Q THEN
-									vMan_Y := vMan_Y - 1;
-								END_IF
-							END_IF
-								
-						ELSE
-							vPIDManual	:= TRUE;
-							vMan_Y		:= 0;
-						END_IF;
+ELSIF GVL.LIO.IgnitionSeq = 4 THEN
+	IF GVL.IO.DIS.RemoteSW THEN
+		vPIDManual := FALSE;
+		vMan_Y := GVL.IO.AOS.FuelValve;
+	ELSIF NOT GVL.IO.DIS.RemoteSW THEN
+		vPIDManual := TRUE;
+		rtManUp(CLK:=GVL.IO.DIS.ManLoadUP);
+		rtManDown(CLK:=GVL.IO.DIS.ManLoadDown);
+	
+		IF rtManUp.Q THEN
+			vMan_Y := vMan_Y + 1;
+		END_IF
+		IF rtManDown.Q THEN
+			vMan_Y := vMan_Y - 1;
+		END_IF
+	END_IF
+		
+ELSE
+	vPIDManual	:= TRUE;
+	vMan_Y		:= 0;
+END_IF;
 
-						FuelController(
-							ACTUAL:= GVL.IO.AIS.SteamPressure, 
-							SET_POINT:= GVL.SysCFG.SteamPressureSP , 
-							KP:= GVL.SysCFG.F_PID_P, 
-							TN:= GVL.SysCFG.F_PID_I, 
-							TV:= GVL.SysCFG.F_PID_D, 
-							Y_MANUAL:= vMan_Y, 
-							Y_OFFSET:= GVL.SysCFG.F_PID_Offset, 
-							Y_MIN:= GVL.SysCFG.F_PID_OutMIN, 
-							Y_MAX:= GVL.SysCFG.F_PID_OutMAX,
-							MANUAL := vPIDManual,
-							RESET:=FALSE , 
-							Y=&gt; GVL.IO.AOS.FuelValve, 
-							LIMITS_ACTIVE=&gt; vPIDLimitActive, 
-							OVERFLOW=&gt;vOverflow );
+FuelController(
+	ACTUAL:= GVL.IO.AIS.SteamPressure, 
+	SET_POINT:= GVL.SysCFG.SteamPressureSP , 
+	KP:= GVL.SysCFG.F_PID_P, 
+	TN:= GVL.SysCFG.F_PID_I, 
+	TV:= GVL.SysCFG.F_PID_D, 
+	Y_MANUAL:= vMan_Y, 
+	Y_OFFSET:= GVL.SysCFG.F_PID_Offset, 
+	Y_MIN:= GVL.SysCFG.F_PID_OutMIN, 
+	Y_MAX:= GVL.SysCFG.F_PID_OutMAX,
+	MANUAL := vPIDManual,
+	RESET:=FALSE , 
+	Y=&gt; GVL.IO.AOS.FuelValve, 
+	LIMITS_ACTIVE=&gt; vPIDLimitActive, 
+	OVERFLOW=&gt;vOverflow );
 
-						SteamDumpController(
-							ACTUAL:= GVL.IO.AIS.SteamPressure, 
-							SET_POINT:= GVL.SysCFG.SteamPressureSP , 
-							KP:= GVL.SysCFG.S_PID_P, 
-							TN:= GVL.SysCFG.S_PID_I, 
-							TV:= GVL.SysCFG.S_PID_D, 
-							Y_MIN:= 0, 
-							Y_MAX:= 100,
-							Y=&gt; GVL.IO.AOS.SteamDumpValve);
-							
-						(* Consumer valve handling *)
-						HFOHeatValve(
-							iOpenedFB:= GVL.IO.DIS.HFOHeatValveOpen , 
-							iClosedFB:= GVL.IO.DIS.HFOHeatValveClosed, 
-							OpenAutoCmd:= vHFOHeatOpenAutoCmd, 
-							CloseAutoCmd:= vHFOHeatCloseAutoCmd, 
-							OpenCmdHMI:= vHFOHeatOpenCmdHMI, 
-							CloseCmdHMI:= vHFOHeatCloseCmdHMI, 
-							SetToAuto:= vHFOHeatSetToAuto, 
-							SetToMan:= vHFOHeatSetToMan, 
-							cfgOpenFailDelay:= GVL.SysCFG.HFOHeatValveOperDelay, 
-							cfgCloseFailDelay:= GVL.SysCFG.HFOHeatValveOperDelay, 
-							cfgFBErrorDelay:= GVL.SysCFG.HFOHeatValveOperDelay, 
-							ValveStatus=&gt; vHFOHeatValveStatus, 
-							ValveIcon=&gt; vHFOHeatValveIcon, 
-							qOpenCmd=&gt; GVL.IO.DOS.HFOHeatValveOpenCmd, 
-							qCloseCmd=&gt; GVL.IO.DOS.HFOHeatValveCloseCmd);
-							
-						HVACHeatValve(
-							iOpenedFB:= GVL.IO.DIS.HVACHeatValveOpen , 
-							iClosedFB:= GVL.IO.DIS.HVACHeatValveClosed, 
-							OpenAutoCmd:= vHVACHeatValveOpenAutoCmd, 
-							CloseAutoCmd:= vHVACHeatValveCloseAutoCmd, 
-							OpenCmdHMI:= vHVACHeatOpenCmdHMI, 
-							CloseCmdHMI:= vHVACHeatCloseCmdHMI, 
-							SetToAuto:= vHVACHeatSetToAuto, 
-							SetToMan:= vHVACHeatSetToMan, 
-							cfgOpenFailDelay:= GVL.SysCFG.HVACHeatValveOperDelay, 
-							cfgCloseFailDelay:= GVL.SysCFG.HVACHeatValveOperDelay, 
-							cfgFBErrorDelay:= GVL.SysCFG.HVACHeatValveOperDelay, 
-							ValveStatus=&gt; vHVACHeatValveStatus, 
-							ValveIcon=&gt; vHVACHeatValveIcon, 
-							qOpenCmd=&gt; GVL.IO.DOS.HVACHeatValveOpenCmd, 
-							qCloseCmd=&gt; GVL.IO.DOS.HVACHeatValveCloseCmd);
-							
-						OperConsValve(
-							iOpenedFB:= GVL.IO.DIS.OperConsValveOpen , 
-							iClosedFB:= GVL.IO.DIS.OperConsValveClosed, 
-							OpenAutoCmd:= vOperConsValveOpenAutoCmd, 
-							CloseAutoCmd:= vOperConsValveCloseAutoCmd, 
-							OpenCmdHMI:= vOperConsOpenCmdHMI, 
-							CloseCmdHMI:= vOperConsCloseCmdHMI, 
-							SetToAuto:= vOperConsSetToAuto, 
-							SetToMan:= vOperConsSetToMan, 
-							cfgOpenFailDelay:= GVL.SysCFG.OperConsValveOperDelay, 
-							cfgCloseFailDelay:= GVL.SysCFG.OperConsValveOperDelay, 
-							cfgFBErrorDelay:= GVL.SysCFG.OperConsValveOperDelay, 
-							ValveStatus=&gt; vOperConsValveStatus, 
-							ValveIcon=&gt; vOperConsValveIcon, 
-							qOpenCmd=&gt; GVL.IO.DOS.OperConsValveOpenCmd, 
-							qCloseCmd=&gt; GVL.IO.DOS.OperConsValveCloseCmd);
-							
-						(* Air flap opening *)
-						GVL.IO.AOS.AirValve := GVL.IO.AOS.FuelValve / GVL.SysCFG.AirToFuelRatio;
+SteamDumpController(
+	ACTUAL:= GVL.IO.AIS.SteamPressure, 
+	SET_POINT:= GVL.SysCFG.SteamPressureSP , 
+	KP:= GVL.SysCFG.S_PID_P, 
+	TN:= GVL.SysCFG.S_PID_I, 
+	TV:= GVL.SysCFG.S_PID_D, 
+	Y_MIN:= 0, 
+	Y_MAX:= 100,
+	Y=&gt; GVL.IO.AOS.SteamDumpValve);
+	
+(* Consumer valve handling *)
+HFOHeatValve(
+	iOpenedFB:= GVL.IO.DIS.HFOHeatValveOpen , 
+	iClosedFB:= GVL.IO.DIS.HFOHeatValveClosed, 
+	OpenAutoCmd:= vHFOHeatOpenAutoCmd, 
+	CloseAutoCmd:= vHFOHeatCloseAutoCmd, 
+	OpenCmdHMI:= vHFOHeatOpenCmdHMI, 
+	CloseCmdHMI:= vHFOHeatCloseCmdHMI, 
+	SetToAuto:= vHFOHeatSetToAuto, 
+	SetToMan:= vHFOHeatSetToMan, 
+	cfgOpenFailDelay:= GVL.SysCFG.HFOHeatValveOperDelay, 
+	cfgCloseFailDelay:= GVL.SysCFG.HFOHeatValveOperDelay, 
+	cfgFBErrorDelay:= GVL.SysCFG.HFOHeatValveOperDelay, 
+	ValveStatus=&gt; vHFOHeatValveStatus, 
+	ValveIcon=&gt; vHFOHeatValveIcon, 
+	qOpenCmd=&gt; GVL.IO.DOS.HFOHeatValveOpenCmd, 
+	qCloseCmd=&gt; GVL.IO.DOS.HFOHeatValveCloseCmd);
+	
+HVACHeatValve(
+	iOpenedFB:= GVL.IO.DIS.HVACHeatValveOpen , 
+	iClosedFB:= GVL.IO.DIS.HVACHeatValveClosed, 
+	OpenAutoCmd:= vHVACHeatValveOpenAutoCmd, 
+	CloseAutoCmd:= vHVACHeatValveCloseAutoCmd, 
+	OpenCmdHMI:= vHVACHeatOpenCmdHMI, 
+	CloseCmdHMI:= vHVACHeatCloseCmdHMI, 
+	SetToAuto:= vHVACHeatSetToAuto, 
+	SetToMan:= vHVACHeatSetToMan, 
+	cfgOpenFailDelay:= GVL.SysCFG.HVACHeatValveOperDelay, 
+	cfgCloseFailDelay:= GVL.SysCFG.HVACHeatValveOperDelay, 
+	cfgFBErrorDelay:= GVL.SysCFG.HVACHeatValveOperDelay, 
+	ValveStatus=&gt; vHVACHeatValveStatus, 
+	ValveIcon=&gt; vHVACHeatValveIcon, 
+	qOpenCmd=&gt; GVL.IO.DOS.HVACHeatValveOpenCmd, 
+	qCloseCmd=&gt; GVL.IO.DOS.HVACHeatValveCloseCmd);
+	
+OperConsValve(
+	iOpenedFB:= GVL.IO.DIS.OperConsValveOpen , 
+	iClosedFB:= GVL.IO.DIS.OperConsValveClosed, 
+	OpenAutoCmd:= vOperConsValveOpenAutoCmd, 
+	CloseAutoCmd:= vOperConsValveCloseAutoCmd, 
+	OpenCmdHMI:= vOperConsOpenCmdHMI, 
+	CloseCmdHMI:= vOperConsCloseCmdHMI, 
+	SetToAuto:= vOperConsSetToAuto, 
+	SetToMan:= vOperConsSetToMan, 
+	cfgOpenFailDelay:= GVL.SysCFG.OperConsValveOperDelay, 
+	cfgCloseFailDelay:= GVL.SysCFG.OperConsValveOperDelay, 
+	cfgFBErrorDelay:= GVL.SysCFG.OperConsValveOperDelay, 
+	ValveStatus=&gt; vOperConsValveStatus, 
+	ValveIcon=&gt; vOperConsValveIcon, 
+	qOpenCmd=&gt; GVL.IO.DOS.OperConsValveOpenCmd, 
+	qCloseCmd=&gt; GVL.IO.DOS.OperConsValveCloseCmd);
+	
+(* Air flap opening *)
+GVL.IO.AOS.AirValve := GVL.IO.AOS.FuelValve / GVL.SysCFG.AirToFuelRatio;
 					</p></code></pre>
 					
 				</div>
@@ -506,10 +506,14 @@
 
 <footer>
 	<div class="footerbar">
-		<p>Copyright: Toni Kucic 2018, Design: Toni Kucic 2018</p>
-		<a href="https://www.linkedin.com/in/tkucic/"><img src="../img/linkedinico.png"></a>
-		<a href="https://github.com/tkucic/"><img src="../img/githubico.png"></a>
-		<a href="https://tkautomation.teachable.com"><img src="../img/schoolico.png"></a>
+		<div class="row">
+			<p>Copyright: Toni Kucic 2018, Design: Toni Kucic 2018</p>
+		</div>
+		<div class="row">
+			<a href="https://www.linkedin.com/in/tkucic/"><img src="../img/linkedinico.png"></a>
+			<a href="https://github.com/tkucic/"><img src="../img/githubico.png"></a>
+			<a href="https://tkautomation.teachable.com"><img src="../img/schoolico.png"></a>
+		</div>
 	</div>
 </footer>
 </html>
