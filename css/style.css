@@ -23,7 +23,6 @@ a:hover {
 	text-decoration: none;
 	padding: 20px 20px;
 	background-color: #000000;
-	float: left;
 }
 
 /* Center something in the middle of the viewport */
@@ -187,10 +186,9 @@ a:hover {
 .gridwrap {
 	display: grid;
 	text-align:left;
-	color: white;
 	width: 100%; /* Device screen size doesn't matter here */
 }
-.gridwrap > div {
+/*.gridwrap > div {
 	background: #001a33;
 }
 .gridwrap > div:nth-child(odd) {
@@ -199,7 +197,7 @@ a:hover {
 
 .gridwrap h1, h3 {
 	text-align: center;
-}
+}*/
 
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
@@ -239,10 +237,12 @@ a:hover {
 /* --- Actual content --- */
 #home {
 	min-height: 100vh;
+	/*background: url("../img/tonikucic.png");*/
 	text-align: center;
 }
-#home a {
-	float: none;
+#home .button {
+	display: inline-block;
+	width: 200px;
 }
 
 #about {
@@ -255,6 +255,15 @@ a:hover {
 	margin-left: auto;
 	margin-right: auto;
 }
+#about .col-3 {
+	background-color: #001a33;
+	color: white;
+	min-height: 100vh;
+}
+
+#about .col-9 h2 {
+	text-align: center;
+}
 
 #about a {
 	text-decoration: none;
@@ -264,31 +273,66 @@ a:hover {
 #education {
 	min-height: 100vh;	
 }
+#education .col-9 {
+	background-color: #001a33;
+	min-height: inherit;
+	color: white;
+}
+#education .row {
+	min-height: 110vh;
+}
+#education a {
+	text-decoration: none;
+	color: blue;
+}
 #career {
 	min-height: 100vh;
+	background-color: #001a33;
+	color: white;
 }
 
 #projects {
 	min-height: 100vh;
 	}
+#projects h1 {
+	text-align: center;
+}
 .snippet {
 	height: 150px;
 	overflow: auto;
+	background-color: grey;
+	color: white;
 }
-#projects .row {
-
+#projects .folderhead {
+	background-color: #001a33;
+	color: white;
+	width: 200px;
+	padding: 10px 10px;
+}
+#projects .foldertext {
+	background-color: #001a33;
+	color: white;
+	padding: 5px 10px;
 }
 	
 #docs {
 	min-height: 100vh;
+	background-color: #001a33;
+	color: white;
+	text-align: center;
 	}
 #docs a {
 	width: 100%;
+	display: inline-block;
 }
 	
 #contact {
-	min-height: 100vh;
+	min-height: 75vh;
+	font-size: 25px;
 	}
+#contact h2, hr {
+	text-align: center;
+}
 
 /* Footerbar */
 .footerbar {

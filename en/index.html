@@ -34,7 +34,7 @@
 	<div class="gridwrap">
 		<div id="home" class="row">
 			<div class="col-12">
-				<div class="vcenter">
+				<div>
 					<h3>INDUSTRIAL AUTOMATION PROFESSIONAL WITH FOCUS ON MARINE INDUSTRY</h3>
 					<h1>TONI KUCIC</h1>
 					<hr style="width: 150px">
@@ -46,11 +46,10 @@
 			</div>
 		</div>
 		<div id="about">
-			<h1>ABOUT ME</h1>
 			<div class="row">
 				<div class="col-3">
 					<img src="../img/tonikucic.png">
-					<h3>AREAS OF EXPERTISE</h3>
+					<h2>AREAS OF EXPERTISE</h2>
 					<hr>
 					<ul>
 						<li>Marine Engineering</li>
@@ -62,7 +61,7 @@
 					</ul>
 				</div>
 				<div class="col-9">
-					<h3>MY STORY</h3>
+					<h2>MY STORY</h2>
 					<hr>	
 					<p>
 						I was born 20.5.1989 in a small Croatian town of Rijeka. Rijeka is know for its open and international way of thinking, Ucka mountain, Tourism and the Croatias industry heart, the Shipyard 3.Maj.<br>
@@ -83,10 +82,10 @@
 			</div>
 		</div>
 		<div id="education">
-			<h1>EDUCATION</h1>
 			<div class="row">
 				<div class="col-3">
-					<h2>Certifications</h2>
+					<h2>EDUCATION</h2>
+					<h3>Certifications</h3>
 					<h4>Electrical</h4>
 					<ul>
 						<li>Electro-Technical Officer</li>
@@ -116,9 +115,9 @@
 				</div>
 				<div class="col-9">
 					<div class="tab">
+						<button class="tablinks" onclick="openTab(event, 'HighSchool')">HIGH SCHOOL ------></button>
+						<button class="tablinks" onclick="openTab(event, 'Bachelor')">BACHELOR ------></button>
 						<button class="tablinks" onclick="openTab(event, 'Master')" id="defaultOpenEdu">MASTER</button>
-						<button class="tablinks" onclick="openTab(event, 'Bachelor')">BACHELOR</button>
-						<button class="tablinks" onclick="openTab(event, 'HighSchool')">HIGH SCHOOL</button>
 					</div>
 					<hr>
 					<div id="Master" class="tabcontent">
@@ -138,7 +137,7 @@
 							<br><br>
 							The master thesis paper subject was titled "Design and uses of mobile offshore bases - feasibility of local installation".
 							<br><br>
-							In order to read the master thesis in croatian click <a href="../docs/mr.sc.Toni_Kucic_-_Projektiranje_I_Primjena_Dinamickih_odobalnih_baza.pdf" target="new" class="button">here</a>
+							In order to read the master thesis in croatian click <a href="../docs/mr.sc.Toni_Kucic_-_Projektiranje_I_Primjena_Dinamickih_odobalnih_baza.pdf" target="new">here</a>
 						</p>
 					</div>
 					<div id="Bachelor" class="tabcontent">
@@ -161,7 +160,7 @@
 							<br><br>
 							The bachelor thesis paper subject was titled "Automation of starting process of ship steam boiler".
 							<br><br>
-							In order to read the bachelor thesis in croatian click <a href="../docs/bsc.Toni_Kucic_-_Automatizacija_paljenja_brodskog_parnog_kotla.pdf" target="new" class="button">here</a>
+							In order to read the bachelor thesis in croatian click <a href="../docs/bsc.Toni_Kucic_-_Automatizacija_paljenja_brodskog_parnog_kotla.pdf" target="new">here</a>
 						</p>
 					</div>
 					<div id="HighSchool" class="tabcontent">
@@ -188,13 +187,14 @@
 			</div>
 		</div>
 		<div id="career">
-			<h1>CAREER</h1>
 			<div class="col-6">
 				<div class="tab">
-					<button class="tablinks" onclick="openTab(event, 'First')" id="defaultOpenCarr">I</button>
-					<button class="tablinks" onclick="openTab(event, 'Second')">II</button>
-					<button class="tablinks" onclick="openTab(event, 'Third')">III</button>
-					<button class="tablinks" onclick="openTab(event, 'Fourth')">IV</button>
+					<button class="tablinks" onclick="openTab(event, 'Fourth')">Student ---->
+					</button>
+					<button class="tablinks" onclick="openTab(event, 'Third')">Reefer Eng. ----></button>
+					<button class="tablinks" onclick="openTab(event, 'Second')">El.tech. Officer -------></button>
+					<button class="tablinks" onclick="openTab(event, 'First')" id="defaultOpenCarr">Automation Dev.
+					</button>
 				</div>
 				<hr>
 				<div id="First" class="tabcontent">
@@ -398,26 +398,26 @@
 			<h1>PROJECTS</h1>
 			<div class="row">
 				<div class="col-6">
-					<div>
-						<h4>Automated ships steam boiler</h4>
-						<p>
-							<b>What is a steam boiler:</b><br>
-							Essentially, a boiler is a container into which water can be fed and by the application of heat is evaporated continuously into steam. Steam is raised mainly for heating the heavy fuel oil used to fire the ‘diesel engines’ , for space heating , to power cargo handling pumps and as an aid to cleaning storage tanks and surfaces.<br>
-							This program controls the ignition sequence of the burner in order to create steam. Along with the boiler program a simulator is included to simulate loads and to test the PID regulation.<br>
-							<br>
-							Showcase video (v2.0): <a href="https://www.youtube.com/watch?v=-ouNOCi6Tog&t=34s">Here</a><br>
-							<br>
-							<b>Goal of this program</b><br>
-							The idea behind of this project is to provide a support project for my bachelor degree paper "Automation of ships steam boiler". When the project is finished the bachelor degree will be accompanied by the complete PLC program and a simulator.<br>
-							<br>
-							Second intention of the project is to create a reference project that presents my automation skills and as such this project will never be really finished because there is always something to improve.<br>
-							<br>
-							The project is version controlled at GitHun and can be downloaded from <a href="https://github.com/tkucic/AutoSteamBoiler">here.</a>
-						</p>
+					<div class="folderhead">
+						<b>Automated ships steam boiler</b>
 					</div>
-					<div class="snippet">
-						<h4><b>Code snippet:</b></h4>
-						<pre><code><p>
+					<div class="foldertext">
+						<b>What is a steam boiler:</b><br>
+						Essentially, a boiler is a container into which water can be fed and by the application of heat is evaporated continuously into steam. Steam is raised mainly for heating the heavy fuel oil used to fire the ‘diesel engines’ , for space heating , to power cargo handling pumps and as an aid to cleaning storage tanks and surfaces.<br>
+						This program controls the ignition sequence of the burner in order to create steam. Along with the boiler program a simulator is included to simulate loads and to test the PID regulation.<br>
+						<br>
+						Showcase video (v2.0): <a href="https://www.youtube.com/watch?v=-ouNOCi6Tog&t=34s">Here</a><br>
+						<br>
+						<b>Goal of this program</b><br>
+						The idea behind of this project is to provide a support project for my bachelor degree paper "Automation of ships steam boiler". When the project is finished the bachelor degree will be accompanied by the complete PLC program and a simulator.<br>
+						<br>
+						Second intention of the project is to create a reference project that presents my automation skills and as such this project will never be really finished because there is always something to improve.<br>
+						<br>
+						The project is version controlled at GitHub and can be downloaded from <a href="https://github.com/tkucic/AutoSteamBoiler">here.</a>
+						<br><br>
+						<div class="snippet">
+							<h4><b>Code snippet:</b></h4>
+							<pre><code><p>
 IF GVL.LIO.IgnitionSeq &gt; 4 OR GVL.LIO.IgnitionSeq = 0 THEN
 	(* Switch off fuel valve *)
 	vPIDManual	:= TRUE;
@@ -530,37 +530,31 @@ OperConsValve(
 	
 (* Air flap opening *)
 GVL.IO.AOS.AirValve := GVL.IO.AOS.FuelValve / GVL.SysCFG.AirToFuelRatio;
-						</p></code></pre>
-					</div>
+								</p></code></pre>
+							</div>
+						</div>	
 				</div>
 				<div class="col-6">
-					<div>
-						<h4>TKAutomation Library</h4>
-						<p>
-							This library is created to provide support and tested models for simulation in TK Automation schools and projects.<br>
-							<b>Contents of the library</b><br>
-							<ul>
-								<li>Pump control logic</li>
-								<li>Pump simulation model </li>
-								<li>Tank control logic</li>
-								<li>Tank simulation model</li>
-								<li>Multispeed electromotor simulation model</li>
-								<li>Workplace</li>
-							</ul>
-							<br>
-							The library is intended to be installed into the Codesys enviroment with the library installer. The library is protected from editing by a password. Library is version controled on GitHub and can be downloaded from <a href="https://github.com/tkucic/tkautomation_lib">here.</a>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-						</p>
+					<div class="folderhead">
+						<b>TKAutomation Library<br><br></b>
 					</div>
-					<div class="snippet">
-						<h4><b>Code snippet:</b></h4>
-						<pre><code><p>
+					<div class="foldertext">
+						This library is created to provide support and tested models for simulation in TK Automation schools and projects.<br>
+						<b>Contents of the library</b><br>
+						<ul>
+							<li>Pump control logic</li>
+							<li>Pump simulation model </li>
+							<li>Tank control logic</li>
+							<li>Tank simulation model</li>
+							<li>Multispeed electromotor simulation model</li>
+							<li>Workplace</li>
+						</ul>
+						<br>
+						The library is intended to be installed into the Codesys enviroment with the library installer. The library is protected from editing by a password. Library is version controled on GitHub and can be downloaded from <a href="https://github.com/tkucic/tkautomation_lib">here.</a>
+						<br><br><br><br><br><br><br><br>
+						<div class="snippet">
+							<h4><b>Code snippet:</b></h4>
+							<pre><code><p>
 IF NOT vColdRestart THEN
 	TankLevel_cbm := cfgStartLevel;
 	vColdRestart := TRUE;
@@ -586,14 +580,17 @@ FSHHActive := TankLevel_pc &lt; cfgFSHH;
 FSHActive := TankLevel_pc &lt; cfgFSH;
 FSLActive := TankLevel_pc &gt; cfgFSL;
 FSLLActive := TankLevel_pc &gt; cfgFSLL;
-						</p></code></pre>
-					</div>
-				</div>
-			</div>
+							</p></code></pre>
+						</div><!-- End of code snippet div -->
+					</div><!-- End of second column content div -->
+				</div><!-- End of second column snippet div -->
+			</div><!-- End of first row div -->
 			<div class="row">
 				<div class="col-6">
-					<h4>This website</h4>
-					<p>
+					<div class="folderhead">
+						<b>This website</b>
+					</div>
+					<div class="foldertext">
 						This website is also intended to show my skills in web design. The website is built from scratch without using any templates and by learning as I go.
 						<br> 
 						<b>Languages used on the webpage are:</b>
@@ -604,20 +601,23 @@ FSLLActive := TankLevel_pc &gt; cfgFSLL;
 						</ul>
 						<br>
 						The whole code is open for use and downloadable from GitHub from <a href="https://github.com/tkucic/website">here.</a>
-					</p>
+						<br><br>
+					</div>
 				</div>
 				<div class="col-6">
-					<h4>PLC Programming school</h4>
-					<p>
+					<div class="folderhead">
+						<b>PLC Programming school</b>
+					</div>
+					<div class="foldertext">
 						Information about Structured Text programming is scarce to say the least so I have decided to solve this problem and dedicate a online school to teaching ST Code to anyone who wants to learn it.
 						<br>
 						The school is in progress of being built as you are reading this text. It will focus on the IEC61311-3 standard and on Structured Text programming for PLCs. ST Code course will start as a introduction to what it really is and how to use it. After the introduction we will focuse on real life industry problems an we will solve them using structured text programming, functions, simulators and much more.
 						<br><br>
 						The school can be found from the website <a href="https://tkautomation.teachable.com">here.</a>
-					</p>
-				</div>
-			</div>
-		</div>
+					</div><!-- End of second column content div row2 -->
+				</div><!-- End of second column div row2 -->
+			</div><!-- End of second row div -->
+		</div><!-- End of projects section div -->
 		
 		<div id="docs">
 			<h1>DOCUMENTS AND PUBLICATIONS</h1>
@@ -650,18 +650,33 @@ FSLLActive := TankLevel_pc &gt; cfgFSLL;
 			</div>
 		</div>
 		<div id="contact">
-			<h1>CONTACT</h1>
-			<div class="col-7">
-				<p>Feel free to contact me and ask about anything. If I can help you with something I will gladly do.</p>
-				<div>
-					<p>EMAIL: <a href="mailto:tkucic@gmail.com">tkucic@gmail.com</a></p>
-					<p>SKYPE: toni.kucic</p>
-					<p>LINKED IN: <a href="https://www.linkedin.com/in/tkucic/">LINK</a>
-					<p>GIT HUB: <a href="https://github.com/tkucic/">LINK</a>
-					<p>TK AUTOMATION SCHOOL: <a href="https://tkautomation.teachable.com">LINK</a>
-				</div>
+			<div class="col-5">
+				<img src="../img/tonikucic.png">	
 			</div>
-
+			<div class="col-7">
+				<h2>Toni Kucic, Automation Engineer</h2>
+				<hr style="width:150px">
+				<table>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>EMAIL:</td>
+						<td><a href="mailto:tkucic@gmail.com">tkucic@gmail.com</a></td>
+					</tr>
+					<tr>
+						<td>LINKEDIN:</td>
+						<td><a href="https://www.linkedin.com/in/tkucic/">www.linkedin.com/in/tkucic/</a></td>
+					</tr>
+					<tr>
+						<td>TK AUTOMATION:</td>
+						<td><a href="https://tkautomation.teachable.com">www.tkautomation.teachable.com</a></td>
+					</tr>
+				</table>
+				<img src="../img/signature.png">
+			</div>
 		</div>
 	</div>
 
