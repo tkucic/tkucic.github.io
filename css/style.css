@@ -314,6 +314,14 @@ a:hover {
 	color: white;
 	padding: 5px 10px;
 }
+
+#courses {
+	min-height: 100vh;
+	font-size: 25px;
+	text-align: center;
+	background-color: #001a33;
+	color: white;
+}
 	
 #docs {
 	min-height: 100vh;
@@ -347,5 +355,8 @@ a:hover {
 	width: 50px;
 	height: auto;
 	padding-left: 25px;
+}
+.footerbar a:hover {
+	background-color: black;
 }
 
