@@ -1,6 +1,11 @@
 /* --- Webpage wide selectors --- */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 html, body {
-	font-family: Arial;
+	font-family: 'Montserrat', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 body {
@@ -9,175 +14,36 @@ body {
 	margin-left: 0;
 	margin-right: 0;
 }
-a:hover {
-	background-color: #a8a8a8;
-}
-* {
-    box-sizing: border-box;
-}
-/* --- Reusable classes --- */
-/* Styling for a button */
-.button {
-	text-align: center;
-	color: #ffffff;
-	text-decoration: none;
-	padding: 20px 20px;
-	background-color: #000000;
-}
 
-/* Center something in the middle of the viewport */
-.vcenter {
-	position: relative;
-	top:50%;
-	transform:translateY(-50);
-}
-
-.tab {
-	overflow: hidden;
-	background-color: inherit;
-}
-
-.tab button {
-	background-color: inherit;
-	color: white;
-	float: left;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	padding: 14px 16px;
-	transition: 0.3s;
-	font-size: medium;
-	font-weight: bold;
-}
-
-.tab button:hover {
-	background-color: #a8a8a8;
-}
-
-.tab button.active {
-	background-color: #a8a8a8;
-}
-
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: none;
-	animation: fadeEffect 1s;
-}
-
-/* Slideshow */
-/* Hide the images by default */
-.slideshow1 {
-    display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  width: auto;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/5) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  top: 0;
-}	
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-/* --- End of reusable classes --- */
-@keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
 /* --- Navigation bar --- */
-.navbar {
+header {
 	background-color: #000000;
-	overflow: hidden;
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	padding: 10px 5%;
 }
 
-.navbar a {
-	float: left;
-	display: block;
+header > a {
 	color: white;
 	text-align: center;
-	padding: 10px 25px;
 	text-decoration: none;
-	font-size: 12px;
-}	
-
-.navbar a:hover {
+	font-weight: 400;
+	font-size: 16px;
+}
+header > a:hover {
 	background-color: #a8a8a8;
 }
-
-.navbar .navicon {
-	display: none;
+nav > a {
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 16px;
+	padding: 0px 15px;
 }
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-  .navbar a {
-	  display: none;
-	  }
-  .navbar a.navicon {
-    float: right;
-    display: block;
-  }
-  .navbar.responsive {position: relative;}
-  .navbar.responsive a.navicon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navbar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
+nav > a:hover {
+	background-color: #a8a8a8;
 }
 
 /* --- END OF NAVIGATION BAR --- */
@@ -186,18 +52,8 @@ a:hover {
 .gridwrap {
 	display: grid;
 	text-align:left;
-	width: 100%; /* Device screen size doesn't matter here */
+	width: 100%;
 }
-/*.gridwrap > div {
-	background: #001a33;
-}
-.gridwrap > div:nth-child(odd) {
-	background: #003566;
-}
-
-.gridwrap h1, h3 {
-	text-align: center;
-}*/
 
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
@@ -215,53 +71,42 @@ a:hover {
 [class*="col-"] {
     float: left;
 	padding: 15px;
+	height:100vh;
 }
-/*
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}*/
 
+/*Columns go to their maximum size if the screen is smaller than 600px*/
 @media only screen and (max-width: 600px) {
-  [class*="col-"] {
-        width: 100%;
+	[class*="col-"] {
+		width: 100%;
     }
 }
 
 /* --- End Contents framework --- */
-
+.row {
+	background-color: #000000;
+	color : white;
+	min-height: 100vh;
+	text-align: center;
+	border-top: 1px solid;
+	
+}
+.subsection {
+	display: flex;
+	flex-direction: row;
+}
 /* --- Actual content --- */
 #home {
-	min-height: 100vh;
 	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://marine-electronics.eu/media/wysiwyg/automation/8.jpg);
     display: flex;
     flex-direction: column;
     justify-content: center;
 	align-items: center;
 }
-#home h3, h1{
+#home h3, p{
 	color:white;
 }
 
-#about {
-	min-height: 100vh;
-	border-style : solid; 
-}
-#about img {
-	display: block;
-	width: 50%;
-	height: auto;
-	margin-left: auto;
-	margin-right: auto;
-}
-#about .col-3 {
-	background-color: #001a33;
-	color: white;
-	min-height: 100vh;
-}
-
-#about .col-9 h2 {
+#about .col-8 h2 {
 	text-align: center;
 }
 
@@ -270,83 +115,8 @@ a:hover {
 	color: blue;
 }
 
-#education {
-	min-height: 100vh;
-	border-style : solid; 
-	border-color : black;
-}
-#education .col-9 {
-	background-color: #001a33;
-	min-height: inherit;
-	color: white;
-}
-#education .row {
-	min-height: 110vh;
-}
-#education a {
-	text-decoration: none;
-	color: blue;
-}
-#career {
-	min-height: 100vh;
-	background-color: #001a33;
-	color: white;
-	border-style : solid; 
-}
-
-#projects {
-	min-height: 100vh;
-	border-style : solid; 
-	}
-#projects h1 {
-	text-align: center;
-}
-.snippet {
-	height: 150px;
-	overflow: auto;
-	background-color: grey;
-	color: white;
-}
-#projects .folderhead {
-	background-color: #001a33;
-	color: white;
-	width: 200px;
-	padding: 10px 10px;
-}
-#projects .foldertext {
-	background-color: #001a33;
-	color: white;
-	padding: 5px 10px;
-}
-
-#courses {
-	min-height: 100vh;
-	font-size: 25px;
-	text-align: center;
-	background-color: #001a33;
-	color: white;
-	border-style : solid; 
-}
-	
-#docs {
-	min-height: 100vh;
-	background-color: #001a33;
-	color: white;
-	text-align: center;
-	border-style : solid; 
-	}
 #docs a {
-	width: 100%;
 	display: inline-block;
-}
-	
-#contact {
-	min-height: 50vh;
-	font-size: 25px;
-	border-style : solid; 
-	}
-#contact h2, hr {
-	text-align: center;
 }
 
 /* Footerbar */
