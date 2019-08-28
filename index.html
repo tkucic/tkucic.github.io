@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<!--Resources-->
-		<script src="js/langData.js" type="text/javascript"></script>
 		<script src="js/langChange.js" type="text/javascript"></script>
 		<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 		<script src="js/mainscript.js" type="text/javascript"></script>
@@ -17,175 +16,127 @@
 		<meta name="description" content="This is the personal website of software developer Toni Kucic. Tämä on henkilökohtainen nettisivu ohjelmistokehitäjää Toni Kucic. Ovo je osobna stranica programera Toni Kucic.">
 
 	</head>
-	<body onload="changeLanguage('en')">
-		<header>
-			<a href="#">TONI KUCIC</a>
-			<nav class="nav_links">
-				<a id='aboutLink' href="#about"></a>
-				<a id='projLink' href="#projects"></a>
-				<a id='coursesLink' href="#courses"></a>
-				<a id='docsLink' href="#docs"></a>
-			</nav>
-			<div>
-				<a href="javascript:void(0);" onclick="changeLanguage('hr')"><img src="img/croFlag.png"></a>
-				<a href="javascript:void(0);" onclick="changeLanguage('fi')"><img src="img/finFlag.png"></a>
-				<a href="javascript:void(0);" onclick="changeLanguage('en')"><img src="img/ukFlag.jpg"></a>		
-			</div>
-		</header>
+	<body>
 		<div class="gridwrap">
-			<div id="home" class="row">
-				<h3 id='homeTitle'></h3>
-				<p id='homeText'></p>
+			<header>
+				<a href="#">TONI KUCIC</a>
+				<nav class="nav_links">
+					<a id='aboutLink' href="#about">ABOUT</a>
+					<a id='portfLink' href="#portfolio">PORTFOLIO</a>
+					<a id='docsLink' href="#docs">DOCS</a>
+				</nav>
+				<div>
+					<a href="javascript:void(0);" onclick="changeLanguage('hr')"><img src="img/croFlag.png"></a>
+					<a href="javascript:void(0);" onclick="changeLanguage('fi')"><img src="img/finFlag.png"></a>
+					<a href="javascript:void(0);" onclick="changeLanguage('en')"><img src="img/ukFlag.jpg"></a>		
+				</div>
+			</header>
+			<div id="home">
+				<h3 id='homeTitle'>HI, I AM TONI, PLC PROGRAMMER.</h3>
+				<p id='homeText'>Read more about me below</p>
 			</div>
-			<div id="about" class="row">
-				<div class="col-4">
-					<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="tonikucic">
-						<a class="LI-simple-link" href='https://fi.linkedin.com/in/tonikucic?trk=profile-badge'>Toni Kucic</a>
-					</div>
+			<div id="about">
+				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="tonikucic">
+					<a class="LI-simple-link" href='https://fi.linkedin.com/in/tonikucic?trk=profile-badge' target="new">Toni Kucic</a>
 				</div>
-				<div class="col-8">
-					<h2>MY STORY</h2>
-					<hr>	
-					<p>
-						I was born 20.5.1989 in a small Croatian town of Rijeka. Rijeka is know for its open and international way of thinking, Ucka mountain, Tourism and the Croatias industry heart, the Shipyard 3.Maj.<br>
-						After electrical high school and university I decided to get experience from the maritime industry. In the three years that followed I moved from being a electrical cadet to electrotechnical officer.<br>
-						On 2016 I decided to return to a shore based job and the perfect place to improve and share my acquired skills was industrial automation.
-					</p>
-					<h4>Me as a person</h4>
-					<p>
-						I strive to be better than the day before not only in my work but in personal life, sports and experience. Going forward is the only way I know. There is nothing better that I like than to solve an really complex problem, to be the guy who gets all things done. There is no problem that cannot be fixed. The only thing you have to do is look at it and the solution will pop into your head, eventually.<br>
-						I have also many hobbies for example: Travelling is the best way. Meeting new cultures and people opens your mind to new possibilities. Thats why I tend to travel as much as I can.
-						<br><br>
-						See the map <a href="img/places.jpg" target="new" alt="Map of the places I visited">here</a>.
-						<br><br>
-						From cycling, running, gymnastics to the dynamic Street Workout, anything goes just to keep healthy and happy.<br>
-						More of that on my <a href="https://www.strava.com/athletes/6654027" target="new" alt="My Strava account">Strava profile</a>
-					</p>
+				<div id="skills">
+					<div>
+						<p>Languages:</p>
+						<ul>
+							<li>IEC61311-3 - ST, FBD, SFC, LADDER</li>
+							<li>Python</li>
+							<li>Java</li>
+							<li>JavaScript</li>
+							<li>HTML</li>
+							<li>XML</li>
+							<li>Markdown</li>
+						</ul>
+					</div>
+					<div>
+						<p>Platforms:</p>
+						<ul>
+							<li>ABB 800xA</li>
+							<li>B&R</li>
+							<li>CODESYS</li>
+						</ul>
+					</div>
+					<div>
+						<p>Expertise:</p>
+						<ul>
+							<li>Control system design</li>
+							<li>Software architecture design</li>
+							<li>Library development</li>
+							<li>HMI, SCADA design</li>
+							<li>Special implementation</li>
+							<li>Automated PLC programming</li>
+							<li>Automated documentation generation</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div id="projects" class="row">
-				<h1>PROJECTS</h1>
-				<div class="subsection">
-					<div class="col-6">
-						<img src="img/img1.jpg">
-					</div>
-					<div class="col-6">
-						<p>
-							<b>Automated ships steam boiler</b>
-							<b>What is a steam boiler:</b><br>
-							Essentially, a boiler is a container into which water can be fed and by the application of heat is evaporated continuously into steam. Steam is raised mainly for heating the heavy fuel oil used to fire the ‘diesel engines’ , for space heating , to power cargo handling pumps and as an aid to cleaning storage tanks and surfaces.<br>
-							This program controls the ignition sequence of the burner in order to create steam. Along with the boiler program a simulator is included to simulate loads and to test the PID regulation.<br>
-							<br>
-							Showcase video (v2.0): <a href="https://www.youtube.com/watch?v=-ouNOCi6Tog&t=34s">Here</a><br>
-							<br>
-							<b>Goal of this program</b><br>
-							The idea behind of this project is to provide a support project for my bachelor degree paper "Automation of ships steam boiler". When the project is finished the bachelor degree will be accompanied by the complete PLC program and a simulator.<br>
-							<br>
-							Second intention of the project is to create a reference project that presents my automation skills and as such this project will never be really finished because there is always something to improve.<br>
-							<br>
-							The project is version controlled at GitHub and can be downloaded from <a href="https://github.com/tkucic/AutoSteamBoiler">here.</a>
-						</p>
-					</div>
+			<div id="portfolio">
+				<h1>PORTFOLIO</h1>
+				<div>
+					<img src="img/img1.jpg">
 				</div>
-				<div class="subsection">
-					<div class="col-6">
-						<img src="img/img1.jpg">
-					</div>
-					<div class="col-6">
-						<p>
-							<b>TKAutomation Library<br><br></b>
-							This library is created to provide support and tested models for simulation in TK Automation schools and projects.<br>
-							<b>Contents of the library</b><br>
-							<ul>
-								<li>Pump control logic</li>
-								<li>Pump simulation model </li>
-								<li>Tank control logic</li>
-								<li>Tank simulation model</li>
-								<li>Multispeed electromotor simulation model</li>
-								<li>Workplace</li>
-							</ul>
-							<br>
-							The library is intended to be installed into the Codesys enviroment with the library installer. The library is protected from editing by a password. Library is version controled on GitHub and can be downloaded from <a href="https://github.com/tkucic/tkautomation_lib">here.</a>
-						</p>
-					</div>
+				<div>
+					<h2>Automated ships steam boiler</h2>
+					<p>What is a steam boiler?</p>
+					<p>Essentially, a boiler is a container into which water can be fed
+					and by the application of heat is evaporated continuously into steam. 
+					Steam is raised mainly for heating the heavy fuel oil used to fuel the diesel engines
+					, for space heating, to power cargo handling pumps and as an aid to cleaning storage tanks
+					and surfaces.</p>
+					<p>This program controls the ignition sequence of the burner in order to create steam.
+					Along with the boiler program, a simulator is included to simulate loads and to test the regulation.</p>
+					<p>Goal of this program</p>
+					<p>The idea behind of this project is to provide a support project for my bachelor degree paper "Automation of ships steam boiler". When the project is finished the bachelor degree will be accompanied by the complete PLC program and a simulator.
+					Second intention of the project is to create a reference project that presents my automation skills and as such this project will never be really finished because there is always something to improve.
+					The project is version controlled at GitHub and can be downloaded from <a href="https://github.com/tkucic/AutoSteamBoiler">here.</a>
+					</p>
 				</div>
-				<div class="subsection">
-					<div class="col-6">
-						<img src="img/img1.jpg">
-					</div>
-					<div class="col-6">
-						<p>
-							<b>This website<br><br></b>
-							This website is also intended to show my skills in web design. The website is built from scratch without using any templates and by learning as I go.
-							<br> 
-							<b>Languages used on the webpage are:</b>
-							<ul>
-								<li>HTML5</li>
-								<li>CSS</li>
-								<li>JavaScript</li>
-							</ul>
-							<br>
-							The whole code is open for use and downloadable from GitHub from <a href="https://github.com/tkucic/website">here.</a>
-							<br>
-						</p>
-					</div>
+				<div>
+					<h2>This website</h2>
+					<p>This website is intended for training my web development. The website is built using HMTL, CSS and JavaScript and by learning as I go.</p>
 				</div>
-				<div class="subsection">
-					<div class="col-6">
-						<img src="img/img1.jpg">
-					</div>
-					<div class="col-6">
-						<p>
-							<b>PLC Programming school</b>
-							Information about Structured Text programming is scarce to say the least so I have decided to solve this problem and dedicate a online school to teaching ST Code to anyone who wants to learn it.
-							<br>
-							The school is in progress of being built as you are reading this text. It will focus on the IEC61311-3 standard and on Structured Text programming for PLCs. ST Code course will start as a introduction to what it really is and how to use it. After the introduction we will focuse on real life industry problems an we will solve them using structured text programming, functions, simulators and much more.
-							<br><br>
-							The school can be found from the website <a href="https://tkautomation.teachable.com">here.</a>
-						</p>
-					</div>
+				<div>
+					<img src="img/img1.jpg">
 				</div>
-			</div><!-- End of projects content -->
-			<div id="courses" class="row">
-				<h3>COURSES</h3>
-				<p>Courses coming soon</p>
-			</div><!-- End courses content -->
-			<div id="docs" class="row">
-				<h1>DOCUMENTS AND PUBLICATIONS</h1>
-				<div class="col-4">
+			</div>
+			<div id="docs">
+				<h1>DOCUMENTS AND CERTIFICATIONS</h1>
+				<div>
 					<h3>Curriculum Vitae</h3>
 					<a href="docs/cv_tonikucic.pdf" target="new" class="button">English CV</a>
 					<a href="docs/cv_tonikucic_FI.pdf" target="new" class="button">Suomen CV</a>
 					<a href="docs/cv_tonikucic_HR.pdf" target="new" class="button">Hrvatski CV</a>
 				</div>
-				<div class="col-4">
+				<div>
 					<h3>Thesis</h3>
-					<a href="docs/mr.sc.Toni_Kucic_-_Projektiranje_I_Primjena_Dinamickih_odobalnih_baza.pdf" target="new" class="button">Master Disertation</a>
-					<a href="docs/bsc.Toni_Kucic_-_Automatizacija_paljenja_brodskog_parnog_kotla.pdf" target="new" class="button">Bachelor disertation</a>
+					<a href="docs/mr.sc.Toni_Kucic_-_Projektiranje_I_Primjena_Dinamickih_odobalnih_baza.pdf" target="new">Master Disertation</a>
+					<a href="docs/bsc.Toni_Kucic_-_Automatizacija_paljenja_brodskog_parnog_kotla.pdf" target="new">Bachelor disertation</a>		
 				</div>
-				<div class="col-4">
-					<h3>Articles</h3>
-					<a href="https://www.linkedin.com/pulse/one-day-electrical-engineer-onboard-cargo-ship-toni-kucic" target="new" class="button">One day onboard a cargoship</a>
-					<a href="docs/CS1_DC_24V_UPS_Abnormal.pdf" target="new" class="button">24VDC UPS system abnormal</a>
-					<a href="docs/CS2_Waterpump_priming_problem.pdf" target="new" class="button">Water pump priming system problem</a>
-					<a href="docs/CS3_Aux.Boiler_Preheater_malfunction.pdf" target="new" class="button">Aalborg Steam boiler preheater malfunction</a>
-					<a href="docs/Kucic_Babic_Internet_na_brodovima(IEEE).pdf" target="new" class="button">Internet na brodovima(IEEE)</a>
-					<a href="docs/T.Kucic_Solenoid_relay_electric_device.pdf" target="new" class="button">Solenoid relay electric device</a>
-					<a href="https://prezi.com/snmjwwjf-tes/toni-kucic-ivan-panic-mrezno-racunalstvo/" target="new" class="button">Mrežno računalstvo</a>
-					<a href="https://www.linkedin.com/pulse/electrical-troubleshooting-toni-ku%C4%8Di%C4%87?trk=prof-post" target="new" class="button">Electrical troubleshooting</a>
-					<a href="https://www.linkedin.com/pulse/simple-working-principles-electrical-sensor-systems-vessels-kucic" target="new" class="button">Working principles of sensors</a>
-					<a href="http://www.kvarnernews.hr/tag/toni-kucic/" target="new" class="button">Street Workout Natjecanje u Puli</a>
-					<a href="http://fightsite.hr/rubrike/fitness/ruski-zgib-pravi-dokaz-snage/" target="new" class="button">Ruski zgib, pravi dokaz snage</a>
-				</div><!-- End docs column 2 -->
+				<div>
+					<h3>Certifications</h3>
+					<ul>
+						<li>Cert1</li>
+						<li>Cert2</li>
+						<li>Cert3</li>
+						<li>Cert4</li>
+						<li>Cert5</li>
+						<li>Cert6</li>
+						<li>Cert7</li>
+						<li>Cert8</li>
+						<li>Cert9</li>
+					</ul>
+				</div>
 			</div><!-- End docs content -->
-		</div><!-- End of main gridwrap -->
-		<footer>
-			<div class="footerbar">
+			<footer>
 				<p>Made entirely by me in 2019</p>
 				<a href="mailto://tkucic@gmail.com">@</a>
 				<a href="https://www.linkedin.com/in/tkucic/"><img src="img/linkedinico.png"></a>
 				<a href="https://github.com/tkucic/"><img src="img/githubico.png"></a>
-			</div>
-		</footer>	
+			</footer>	
+		</div>
 	</body>
 </html>
