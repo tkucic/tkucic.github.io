@@ -16,64 +16,67 @@
 
 	</head>
 	<body>
-		<div class="gridwrap">
-			<header>
-				<a href="#">TONI KUCIC</a>
-				<nav class="nav_links">
-					<a id='aboutLink' href="#about">ABOUT</a>
-					<a id='portfLink' href="#portfolio">PORTFOLIO</a>
-					<a id='docsLink' href="#docs">DOCS</a>
-				</nav>
-				<div>
-					<a href="javascript:void(0);" onclick="changeLanguage('hr')"><img src="img/croFlag.png"></a>
-					<a href="javascript:void(0);" onclick="changeLanguage('fi')"><img src="img/finFlag.png"></a>
-					<a href="javascript:void(0);" onclick="changeLanguage('en')"><img src="img/ukFlag.jpg"></a>		
-				</div>
-			</header>
-			<div id="home">
-				<h3 id='homeTitle'>HI, I AM TONI, PLC PROGRAMMER.</h3>
-				<p id='homeText'>Read more about me below</p>
+		<div id="home">
+			<div id="lng">
+				<a href="javascript:void(0);" onclick="changeLanguage('hr')"><img src="img/croFlag.png"></a>
+				<a href="javascript:void(0);" onclick="changeLanguage('fi')"><img src="img/finFlag.png"></a>
+				<a href="javascript:void(0);" onclick="changeLanguage('en')"><img src="img/ukFlag.jpg"></a>		
 			</div>
-			<div id="about">
-				<h1>ABOUT</h1>
+			<div id="homeTitle">
+				<h3>HI, I AM TONI</h3>
+				<h2>V<br>V</h3>
 			</div>
-			<div id="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="tonikucic">
-					<a class="LI-simple-link" href='https://fi.linkedin.com/in/tonikucic?trk=profile-badge' target="new">Toni Kucic</a>
+		</div>
+		<div id="preface">
+			<div id="profilePic">
+				<a href="https://www.linkedin.com/in/tkucic/"><img id="profPic" src="img/tonikucic.png"></a>
 			</div>
-			<div id="skills">
-				<div>
-					<p>Languages:</p>
-					<ul>
-						<li>IEC61311-3 - ST, FBD, SFC, LADDER</li>
-						<li>Python</li>
-						<li>Java</li>
-						<li>JavaScript</li>
-						<li>HTML</li>
-						<li>XML</li>
-						<li>Markdown</li>
-					</ul>
-				</div>
-				<div>
-					<p>Platforms:</p>
-					<ul>
-						<li>ABB 800xA</li>
-						<li>B&R</li>
-						<li>CODESYS</li>
-					</ul>
-				</div>
-				<div>
-					<p>Expertise:</p>
-					<ul>
-						<li>Control system design</li>
-						<li>Software architecture design</li>
-						<li>Library development</li>
-						<li>HMI, SCADA design</li>
-						<li>Special implementation</li>
-						<li>Automated PLC programming</li>
-						<li>Automated documentation generation</li>
-					</ul>
-				</div>
+			<div id="intro">
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error eveniet placeat possimus itaque, commodi dolor, autem labore perferendis velit et deserunt. Placeat dolorum iusto facere ullam officiis obcaecati quis? Aliquam.
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est modi similique reprehenderit impedit quidem dolorum voluptas amet fugit eveniet, accusamus perferendis velit? Molestias doloribus recusandae suscipit quibusdam laudantium eveniet doloremque!
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia eius nostrum quos sed, amet voluptatum temporibus. Officiis aliquid enim quis, ipsa eaque exercitationem, incidunt sapiente maxime voluptas, alias autem delectus.
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat itaque reiciendis laborum molestiae quo, odit ab animi perferendis officia dolorem earum quia minima ex numquam explicabo id dicta! Rem, perspiciatis!
+				</p>
 			</div>
+		</div>
+		<div id="skills">
+			<div id="Plang">
+				<p>Languages:</p>
+				<ul>
+					<li>IEC61311-3 - ST, FBD, SFC, LADDER</li>
+					<li>Python</li>
+					<li>Java</li>
+					<li>JavaScript</li>
+					<li>HTML</li>
+					<li>XML</li>
+					<li>Markdown</li>
+				</ul>
+			</div>
+			<div id="expert">
+				<p>Expertise:</p>
+				<ul>
+					<li>Control system design</li>
+					<li>Software architecture design</li>
+					<li>Library development</li>
+					<li>HMI, SCADA design</li>
+					<li>Special implementation</li>
+					<li>Automated PLC programming</li>
+					<li>Automated documentation generation</li>
+				</ul>
+			</div>
+			<div id="platform">
+				<p>Platforms:</p>
+				<ul>
+					<li>ABB 800xA</li>
+					<li>B&R</li>
+					<li>CODESYS</li>
+				</ul>
+			</div>
+		</div>
+		<div>
 			<div id="portfolio">
 				<h1>PORTFOLIO</h1>
 			</div>
@@ -103,6 +106,8 @@
 			<div id="proj2Img">
 				<img src="img/img1.jpg">
 			</div>
+		</div>
+		<div>
 			<div id="docs">
 				<h2>DOCUMENTS</h2>
 				<div>
@@ -129,12 +134,12 @@
 					<li>Cert9</li>
 				</ul>
 			</div>
-			<footer>
-				<p>Made entirely by me in 2019</p>
-				<a href="mailto://tkucic@gmail.com">@</a>
-				<a href="https://www.linkedin.com/in/tkucic/"><img src="img/linkedinico.png"></a>
-				<a href="https://github.com/tkucic/"><img src="img/githubico.png"></a>
-			</footer>	
 		</div>
+		<footer>
+			<p>Made entirely by me in 2019</p>
+			<a href="mailto://tkucic@gmail.com">@</a>
+			<a href="https://www.linkedin.com/in/tkucic/"><img src="img/linkedinico.png"></a>
+			<a href="https://github.com/tkucic/"><img src="img/githubico.png"></a>
+		</footer>	
 	</body>
 </html>
