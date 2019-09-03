@@ -1,4 +1,4 @@
-/* --- Webpage wide selectors --- */
+/* --- Globals --- */
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 * {
@@ -13,7 +13,15 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	text-align:center;
 }
+p {
+	text-align: justify;
+}
+ul {
+	list-style-type: none;
+	/*text-align: justify;*/
+}
 
+/* -- content -- */
 #home {
 	background: url("/img/home.jpg");
 	/* Background image is centered vertically and horizontally at all times */
@@ -37,6 +45,7 @@ body {
     justify-content: center;
 	align-items: center;
 }
+
 #lng {
 	position: absolute;
 	top:5px;
@@ -51,6 +60,7 @@ body {
 	display : grid;
 	grid-template-columns: repeat(2, 1fr);
 	min-height: 100vh;
+	padding: 10px;
 }
 #skills {
 	display : grid;
@@ -60,8 +70,9 @@ body {
 }
 
 #skills > div {
-	border : 2px #000000 solid;
+	box-shadow: 10px 10px 5px grey;
 }
+
 
 #portfolio {
 	display: grid;
@@ -69,10 +80,16 @@ body {
 	grid-template-rows: auto;
 	min-height: 100vh;
 }
+#portfolio > div {
+	padding: 10px;
+}
 #docs {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: auto;
+}
+#docs > div {
+	box-shadow: 10px 10px 5px grey;
 }
 @media (max-width:750px) {
 	#preface {
