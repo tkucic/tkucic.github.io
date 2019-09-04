@@ -73,7 +73,11 @@ ul {
 	box-shadow: 10px 10px 5px grey;
 }
 
-
+.responsiveImg {
+	height: auto;
+	max-width: 500px;
+	width: 100%;
+}
 #portfolio {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
