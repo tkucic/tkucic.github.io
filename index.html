@@ -22,7 +22,7 @@
 				<a href="javascript:void(0);" onclick="changeLanguage('en')"><img src="img/ukFlag.jpg"></a>		
 			</div>
 			<div id="homeTitle">
-				<h3>HI, I AM TONI</h3>
+				<h3 id="greeting">HI, I AM TONI</h3>
 				<h2>V<br>V</h3>
 			</div>
 		</div>
@@ -32,20 +32,22 @@
 				<a href="https://www.linkedin.com/in/tonikucic/"><img class="responsiveImg" id="profPic" src="img/tonikucic.png"></a>
 			</div>
 			<div id="intro">
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error eveniet placeat possimus itaque, commodi dolor, autem labore perferendis velit et deserunt. Placeat dolorum iusto facere ullam officiis obcaecati quis? Aliquam.
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est modi similique reprehenderit impedit quidem dolorum voluptas amet fugit eveniet, accusamus perferendis velit? Molestias doloribus recusandae suscipit quibusdam laudantium eveniet doloremque!
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia eius nostrum quos sed, amet voluptatum temporibus. Officiis aliquid enim quis, ipsa eaque exercitationem, incidunt sapiente maxime voluptas, alias autem delectus.
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat itaque reiciendis laborum molestiae quo, odit ab animi perferendis officia dolorem earum quia minima ex numquam explicabo id dicta! Rem, perspiciatis!
-				</p>
+				<p id="introTxt"><b>"For me, what drives me, is all things electric and automated. I cannot imagine myself doing anything else."</b><br><br>
+				
+					I have been working as an Electrotechnical officer onboard the largest container ships in the world where I learnt how
+					shipboard systems work in practice. That knowledge improved my automation designing and programming skills later on in my carreer.
+					Because of this I can provide unique experience from the operators and designers point of view, bridging the gap.<br><br>
+				
+					In recent years I have been working with Power control automation products, building them from the ground up or improving the 
+					maintainance processes of existing products using Scrum and Lean Six Sigma methodologies.<br><br>
+
+					I am also a Python programmer so decision support with data analysis and automation assisted product development are my main points of interest.<br><br>
 			</div>
 		</div>
 		<hr>
 		<div id="skills">
 			<div id="Plang">
-				<h3>Languages</h3>
+				<h3 id="langTxt">Languages</h3>
 				<ul>
 					<li><img src="img/IEC61131Logo.png"></li>
 					<li><img src="img/pythonLogo.png"></li>
@@ -55,23 +57,23 @@
 				</ul>
 			</div>
 			<div id="expert">
-				<h3>Expertise</h3>
+				<h3 id="expertiseTxt">Expertise</h3>
 				<ul>
-					<li>Control system design</li>
-					<li>Software architecture design</li>
-					<li>Library development</li>
-					<li>HMI, SCADA design</li>
-					<li>Special implementation</li>
-					<li>Automated PLC programming</li>
-					<li>Automated documentation generation</li>
-					<li>Unit testing</li>
-					<li>Marine experience</li>
-					<li>Power control systems</li>
-					<li>Data analysis for decision support</li>
+					<li id="skill1">Control system design</li>
+					<li id="skill2">Software architecture design</li>
+					<li id="skill3">Library development</li>
+					<li id="skill4">HMI, SCADA design</li>
+					<li id="skill5">Special implementation</li>
+					<li id="skill6">Automated PLC programming</li>
+					<li id="skill7">Automated documentation generation</li>
+					<li id="skill8">Unit testing</li>
+					<li id="skill9">Marine experience</li>
+					<li id="skill10">Power control systems</li>
+					<li id="skill11">Data analysis for decision support</li>
 				</ul>
 			</div>
 			<div id="platform">
-				<h3>Platforms</h3>
+				<h3 id="platformsTxt">Platforms</h3>
 				<ul>
 					<li><img src="img/AbbLogo.png" alt="ABB PLCs and 800xA"></li>
 					<li><img src="img/BRLogo.png" alt="B&R PLCs and Automation Studio"></li>
@@ -82,39 +84,34 @@
 		<hr>
 		<div id="portfolio">
 			<div>
-				<img class="responsiveImg" src="img/img1.jpg">
+				<img class="responsiveImg" src="img/autoShipBoilerThumb.jpg">
 			</div>
 			<div>
-				<h2>Automated ships steam boiler</h2>
-				<p>What is a steam boiler?</p>
-				<p>Essentially, a boiler is a container into which water can be fed
-				and by the application of heat is evaporated continuously into steam. 
-				Steam is raised mainly for heating the heavy fuel oil used to fuel the diesel engines
-				, for space heating, to power cargo handling pumps and as an aid to cleaning storage tanks
-				and surfaces.</p>
-				<p>This program controls the ignition sequence of the burner in order to create steam.
-				Along with the boiler program, a simulator is included to simulate loads and to test the regulation.</p>
-				<p>Goal of this program</p>
-				<p>The idea behind of this project is to provide a support project for my bachelor degree paper "Automation of ships steam boiler". When the project is finished the bachelor degree will be accompanied by the complete PLC program and a simulator.
-				Second intention of the project is to create a reference project that presents my automation skills and as such this project will never be really finished because there is always something to improve.
-				The project is version controlled at GitHub and can be downloaded from <a href="https://github.com/tkucic/AutoSteamBoiler">here.</a>
+				<h2 id="AutoShipBoilerHeading">Automated ships steam boiler</h2>
+				<p id="SteamBoilerDesc">
+					This project is serving as an implementation of my bachelor degree paper "Automation of ships steam boiler". 
+					It covers all the chapters written about in the paper and it even gives the project the HMI and a working simulator.<br><br>
+					Second use of this project is to serve as a portfolio of my automation programming skills, product management, hardware and control system design 
+					and as such it is changing from year to year.<br><br>
+					The <a href="https://github.com/tkucic/AutoSteamBoiler">control program</a> and the HMI have been implemented with CODESYS 3.5 and serialized with my own <a href="https://github.com/tkucic/AutoSteamBoiler">Python serializer</a> for easier versioning with git. 
+					The repository is free to view, download and try, but distributing and using it as a base for further product development is not allowed.
 				</p>
 			</div>
 		</div>
 		<hr>
 		<div id="docs">
 			<div>
-				<h3>Curriculum Vitae</h3>
+				<h3 id="curriculumTxt">Curriculum Vitae</h3>
 				<a href="docs/cv_tonikucic.pdf" target="new" class="button">English CV</a>
 				<a href="docs/cv_tonikucic_FI.pdf" target="new" class="button">Suomen CV</a>
 				<a href="docs/cv_tonikucic_HR.pdf" target="new" class="button">Hrvatski CV</a>
 
-				<h3>Thesis</h3>
+				<h3 id="thesisTxt">Thesis</h3>
 				<a href="docs/mr.sc.Toni_Kucic_-_Projektiranje_I_Primjena_Dinamickih_odobalnih_baza.pdf" target="new">Master Disertation</a>
 				<a href="docs/bsc.Toni_Kucic_-_Automatizacija_paljenja_brodskog_parnog_kotla.pdf" target="new">Bachelor disertation</a>		
 			</div>
 			<div>
-				<h3>Certifications</h3>
+				<h3 id="certificationsTxt">Certifications</h3>
 				<ul>
 					<li><img src="img/ls6Yellow.png" alt="Lean Six Sigma Yellow belt"></img></li>
 					<li><img src="img/ls6White.png" alt="Lean Six Sigma White belt"></img></li>
