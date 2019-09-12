@@ -23,7 +23,7 @@ ul {
 
 /* -- content -- */
 #home {
-	background: url("/img/home.jpg");
+	background: url("/img/home2.jpg");
 	/* Background image is centered vertically and horizontally at all times */
 	background-position: center center;
   
@@ -39,11 +39,7 @@ ul {
 	background-color: #464646;
 
 	min-height: 100vh;
-	color : white;
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
-	align-items: center;
+	color : black;
 }
 
 #lng {
@@ -53,7 +49,9 @@ ul {
 }
 #homeTitle {
 	position: absolute;
-	bottom: 20px;
+	top : 50vh;
+	left: 10%;
+	font-size: 20pt;
 }
 
 #preface {
@@ -68,11 +66,11 @@ ul {
 	display : grid;
 	grid-template-columns: repeat(3, 1fr);
 	min-height: 100vh;
-	grid-gap: 5px;
+	grid-gap: 10px;
 }
 
 #skills > div {
-	box-shadow: 10px 10px 5px grey;
+	box-shadow: 0px 20px 50px rgba(0,0,0,0.5);
 }
 
 .responsiveImg {
@@ -95,9 +93,11 @@ ul {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: auto;
+	min-height: 100vh;
+	grid-gap: 10px;
 }
 #docs > div {
-	box-shadow: 10px 10px 5px grey;
+	box-shadow: 0px 20px 50px rgba(0,0,0,0.5);
 }
 @media (max-width:750px) {
 	#preface {
