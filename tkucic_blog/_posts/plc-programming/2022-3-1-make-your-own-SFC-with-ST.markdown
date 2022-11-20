@@ -1,10 +1,13 @@
 ---
 layout: post
-title:  "Make your own SFC framework with ST"
+title:  "PLC - Programming: Make your own SFC framework with ST"
 author: Toni Kucic
 date:   2022-3-1 22:22:19 +0300
-categories: programming
-tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
+categories: plc-programming
+tags : [
+    plc,industrial-automation, industrial automation, iec61131-3,
+    
+    structuredtext,codesys]
 thumbnail: /assets/post_images/codesysspeedtest.png
 ---
 Did you know that you can build your own SFC framework using ST and CASE statement?

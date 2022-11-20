@@ -4,7 +4,10 @@ title:  "Comparing NMEA0183 Library cross platform"
 author: Toni Kucic
 date:   2022-9-4 22:22:19 +0300
 categories: python
-tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
+tags : [
+    plc,industrial-automation, industrial automation, iec61131-3,
+    
+    structuredtext,codesys,python]
 ---
 I've been playing around building a NMEA0183 simulator and by doing so I've implemented the same nmea parse library in IEC (Structured text), Python 3.10 on my local machine, Micropython on a Raspberry Pi Pico and ANSI C, both on a PLC and on my local machine.
 

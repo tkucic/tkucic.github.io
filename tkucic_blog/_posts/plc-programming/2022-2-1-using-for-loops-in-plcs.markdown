@@ -1,10 +1,13 @@
 ---
 layout: post
-title:  "Using FOR loops in PLCs"
+title:  "PLC - Programming: Using FOR loops in PLCs"
 author: Toni Kucic
 date:   2022-2-1 22:22:19 +0300
-categories: speedtest
-tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
+categories: plc-programming
+tags : [
+    plc,industrial-automation, industrial automation, iec61131-3,
+    
+    structuredtext,codesys]
 thumbnail: /assets/post_images/codesysspeedtest.png
 ---
 Here are some dreaded FOR loops in PLC environments. I keep hearing about how for loops make page faults and can get a PLC stuck so I decided to shed some light on the matter.

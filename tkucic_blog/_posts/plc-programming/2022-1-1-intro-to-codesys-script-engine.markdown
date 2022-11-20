@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  "Latching in ST"
+title:  "Intro to codesys script engine"
 author: Toni Kucic
 date:   2022-1-12 22:22:19 +0300
-categories: programming
-tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
+categories: plc-programming
+tags : [
+    plc,industrial-automation, industrial automation, iec61131-3,
+    
+    structuredtext,codesys,python]
 thumbnail: /assets/post_images/codesysspeedtest.png
 ---
-Here is one way how to implement a latch in structured text with some examples.
 
-PS: You can also use an SR block.
 
 ### Related posts in this category
 

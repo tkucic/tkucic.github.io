@@ -4,9 +4,13 @@ title:  "Designing my own Can Bus breakout board"
 author: Toni Kucic
 date:   2022-3-10 22:22:19 +0300
 categories: other
-tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
+tags : [
+    plc, industrial-automation, industrial automation, iec61131-3,
+    
+    can-bus, canbus, canopen, electronics]
 ---
 I had an idea to try and make a Power and signal bus for my home CAN network. It was a quite a bumpy ride to make these but the idea I was testing works. Bumpy as in "I have no idea what I am doing". This is how it went.
+
 Problem I wanted to solve
 I wanted to make my life a bit easier and cleanup the CAN network I created along the way on my desk. Quite often, I have the need to plug and unplug the nodes from the network. Each node has a different connector as in the network there are PLCs, Arduino boards and CAN analyzers. On top of the CAN network, each device requires some kind of a power supply, either 5V or 24V which makes me pull two different cables sets, making my compact network look like a jungle. As per CiA recommendations, all the nodes should be daisy chained to reduce amount of signal reflections etc. While this is good in a production environment, on my home CAN network I need to rewire half of the bus, annoying!
 Testing the idea
