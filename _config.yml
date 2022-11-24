@@ -22,7 +22,7 @@ title: Toni Kucic | PLC Programming and Controls
 description: >- # this means to ignore newlines until "baseurl:"
  Blog that talks about PLCs, programming in general, Codesys and other Industrial automation topics.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tkucic.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 author: Toni Kucic
 
 # Build settings
