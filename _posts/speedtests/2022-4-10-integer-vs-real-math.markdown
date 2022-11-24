@@ -6,6 +6,7 @@ date:   2022-4-10 22:22:19 +0300
 categories: speedtest
 tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
 thumbnail: /assets/post_images/codesysspeedtest.png
+comments_id: 15
 ---
 Wise man said "Don't use REAL for math if not necessary!". Let's see if that still holds in 2022.
 

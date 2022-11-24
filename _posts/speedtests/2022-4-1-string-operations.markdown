@@ -6,6 +6,7 @@ date:   2022-4-1 22:22:19 +0300
 categories: speedtest
 tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
 thumbnail: /assets/post_images/codesysspeedtest.png
+comments_id: 14
 ---
 By popular demand, the dreaded string operations. Here are some measurements.
 

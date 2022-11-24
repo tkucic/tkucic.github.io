@@ -6,6 +6,7 @@ date:   2022-6-15 22:22:19 +0300
 categories: speedtest
 tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
 thumbnail: /assets/post_images/codesysspeedtest.png
+comments_id: 17
 ---
 This time on measuring interesting code blocks, Ladder Vs FBD Vs ST Vs CFC. Which one is faster?
 

@@ -6,6 +6,7 @@ date:   2022-8-15 22:22:19 +0300
 categories: speedtest
 tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
 thumbnail: /assets/post_images/codesysspeedtest.png
+comments_id: 18
 ---
 Something interesting I found while parsing some strings. Behavior of calculations inside of FOR loops.
 

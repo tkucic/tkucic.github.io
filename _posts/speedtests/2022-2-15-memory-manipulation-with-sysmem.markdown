@@ -9,6 +9,7 @@ tags : [
     
     structuredtext,codesys, memory-manipulation, memset, memcpy]
 thumbnail: /assets/post_images/codesysspeedtest.png
+comments_id: 12
 ---
 This time something more advanced, memory manipulation.
 

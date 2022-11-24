@@ -9,6 +9,7 @@ tags : [
     
     structuredtext,codesys]
 thumbnail: /assets/post_images/codesysspeedtest.png
+comments_id: 13
 ---
 In some protocols like CAN Bus, data is split into bytes. When transporting 16 or more bit integers, they have to be assembled on the recieving end. Let's dive in and take a look, which method is fastest.
 

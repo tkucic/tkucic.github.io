@@ -6,6 +6,7 @@ date:   2022-10-30 21:00:00 +0300
 categories: speedtest
 tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
 thumbnail: /assets/post_images/codesysspeedtest.png
+comments_id: 19
 ---
 I had a task to convert a BOOL[1..32] to 4 Bytes for some communication implementation. Profiling the previous implementation revealed most of the load was coming from this packing function so I decided to figure out the fastest way of packing.
 

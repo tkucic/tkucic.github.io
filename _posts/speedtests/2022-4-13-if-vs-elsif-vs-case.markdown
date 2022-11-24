@@ -6,6 +6,7 @@ date:   2022-4-13 22:22:19 +0300
 categories: speedtest
 tags : [plc,plcprogramming,structuredtext,codesys, iec61131-3]
 thumbnail: /assets/post_images/codesysspeedtest.png
+comments_id: 16
 ---
 
 Multiple authors and developers recommend using CASE over long IF ELSIF sentences. Lets see why.

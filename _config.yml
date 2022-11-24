@@ -32,7 +32,7 @@ plugins:
 
 github_username:  tkucic
 linkedin_username: tonikucic
-
+issues_repo: tkucic/tkucic.github.io
 show_excerpts: true
 
 # Exclude from processing.
