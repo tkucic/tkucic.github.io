@@ -23,11 +23,11 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+  {%- include share-page.html -%}
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 
   {% if page.comments_id %}
     {% include comments.html issue_id=page.comments_id %}
   {% endif %}
 
-  {%- include share-page.html -%}
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
