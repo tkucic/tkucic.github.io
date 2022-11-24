@@ -27,6 +27,14 @@ layout: default
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 
   {% if page.comments_id %}
+    <script src="https://utteranc.es/client.js"
+        repo="tkucic/tkucic.github.io"
+        issue-number="{{ page.comments_id }}"
+        label="utt"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+    </script>
     {% include comments.html issue_id=page.comments_id %}
   {% endif %}
 
