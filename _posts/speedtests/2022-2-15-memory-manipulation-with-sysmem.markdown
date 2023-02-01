@@ -29,7 +29,7 @@ Here are a few examples on how to use MemSet, MemCpy in a PLC environment with s
 
 ### Memset
 
-Memset allows the program to set the whole memory area provided to a certain value. I find this extremely usefull when reseting structs to zero. It requires no additional memory to set a struct and arrays to a value.
+Memset allows the program to set the whole memory area provided to a certain value. I find this extremely useful when resetting structs to zero. It requires no additional memory to set a struct and arrays to a value.
 
 ```pascal
 //------------RESET STRUCT WITH A EMPTY STRUCT -------------------

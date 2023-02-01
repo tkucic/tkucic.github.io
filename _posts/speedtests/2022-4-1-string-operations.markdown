@@ -23,7 +23,7 @@ vTest1.ExecTime := LTIME() - vTest1.OldTime;
 
 NOTE: This will be used in the following measurement, to prove a point
 
-#### Time to copy a string with no lenght defined, ~19ms
+#### Time to copy a string with no length defined, ~19ms
 
 ```pascal
 //------------Time to copy a string -------------------
@@ -32,7 +32,7 @@ vResult2 := vString2;
 vTest2.ExecTime := LTIME() - vTest2.OldTime;
 ```
 
-NOTE: if you dont declare a size, the strings size is max 81 chars. Why it takes less time is unclear
+NOTE: if you don't declare a size, the strings size is max 81 chars. Why it takes less time is unclear
 
 #### Time to concatenate 1 Million times characters with undefined length STRING, ~371ms
 
@@ -80,11 +80,11 @@ END_FOR
 vTest6.ExecTime := LTIME() - vTest6.OldTime;
 ```
 
-NOTE: This is roughly the same time as moving string[255] 1 000 000 times which is expected as one character resolves to a byte, it is just a representation of the byte to be ascii string
+NOTE: This is roughly the same time as moving string[255] 1 000 000 times which is expected as one character resolves to a byte, it is just a representation of the byte to be ASCII string
 
 #### Conclusions
 
-Maybe its not that bad to use strings after all. Ofcourse, if possible to use numbers instead of strings, it is better as memory and execution time is decreased. This also depends on the platform the code is running, how well it handles strings but in the end it's the same as if it would handle byte arrays.
+Maybe its not that bad to use strings after all. Of course, if it is possible to use numbers instead of strings, it would be better as the memory and execution time is decreased. This also depends on the platform the code is running, how well it handles strings but in the end it's the same as if it would handle byte arrays.
 
 Now, what people usually mean when saying "Don't use strings in the code" is:
 
@@ -92,7 +92,7 @@ Now, what people usually mean when saying "Don't use strings in the code" is:
 Don't use strings to represent information that can be represented in numbers!
 ```
 
-Strings are meant for Operators and humans. It is much nicer to get this information so our brains can easily interpret. Computers don't know what strings even are, they just see numbers. So if you want to indicate a broken sensor, alarms, warnings etc, use numbers internally and in the display task/application, convert those to text with a preprogrammed hashmap string arrays.
+Strings are meant for Operators and humans. It is much nicer to get this information so our brains can easily interpret. Computers don't know what strings even are, they just see numbers. So if you want to indicate a broken sensor, alarms, warnings etc, use numbers internally and in the display task/application, convert those to text with a pre-programmed hash map string arrays.
 
 One takeaway for me here was, the default size of undeclared strings. This is something to look out for as you might not need all those 80 characters in a string, also be careful to have enough size so the default size doesn't chop the strings to size.
 
@@ -100,12 +100,12 @@ One takeaway for me here was, the default size of undeclared strings. This is so
 
 | Measur. | Time took (ms) |
 |:---------:|:--------------:|
-| Time to copy a string[255] 1 milion times | 24.9 |
-| Time to copy a string of undeclared lenght 1 milion times  | 19.21 |
-| Time to concatenate 1 milion characters with undeclared lenght string | 371.3 |
-| Time to concatenate 1 milion characters with string[255] | 818.6 |
-| Time to move a byte 1 milion times  | 2.5 |
-| Time to copy and array of 255 bytes, 1 milion times | 22.5 |
+| Time to copy a string[255] 1 million times | 24.9 |
+| Time to copy a string of undeclared length 1 million times  | 19.21 |
+| Time to concatenate 1 million characters with undeclared length string | 371.3 |
+| Time to concatenate 1 million characters with string[255] | 818.6 |
+| Time to move a byte 1 million times  | 2.5 |
+| Time to copy and array of 255 bytes, 1 million times | 22.5 |
 
 ---
 As always, the complete source code is on my [github repository](https://github.com/tkucic/codesys_code_execution_speedTests) dedicated to speed testing.

@@ -101,7 +101,7 @@ See the list of exceptions available [here](https://content.helpme-codesys.com/e
 
 #### A way without using the additional libraries
 
-Some PLC vendors do not have these libraries, therefore it's not possible to reuse this method. But, there is a way, rather hacky, but it works. The idea is to find a exception that the PLC always crashes, e.g. divide by zero. Create a function that does exactly that and there you go.
+Some PLC vendors do not have these libraries, therefore it's not possible to reuse this method. But, there is a way, rather hacky, but it works. The idea is to find an exception that the PLC always crashes, e.g. divide by zero. Create a function that does exactly that and there you go.
 
 ```pascal
 FUNCTION callException : INT
@@ -117,7 +117,7 @@ I say hacky AF. Codesys is quite good in detecting division by zero with literal
 
 #### Debugging this information
 
-When the PLC stops on exception, it will show you the line where the exception has occured. For example, if you divide by zero, the line at which this has occured will have a breakpoint. In the case that this has happened in the root of a POU, that is easy to find but what if this happens inside of a function that is called many times?
+When the PLC stops on exception, it will show you the line where the exception has occurred. For example, if you divide by zero, the line at which this has occurred will have a break point. In the case that this has happened in the root of a POU, that is easy to find but what if this happens inside of a function that is called many times?
 
 ![Results](/assets/post_images/breakpoint-exception.png){:class="img-responsive"}
 
@@ -133,7 +133,7 @@ The implicitly called functions like CheckBounds, CheckDiv etc increase the CPU 
 
 CmpApp, SysExcept, SysTypes2_Interfaces are libraries and will increase the binary code size. Be sure to remove those before deploying to production.
 
-This is a tool like any other and needs to be used accordingly. There is no need to run this continuously, for example on major releases or during testing this could be implemented to confirm there are no exceptions or funny buisness going on after a code change.
+This is a tool like any other and needs to be used accordingly. There is no need to run this continuously, for example on major releases or during testing this could be implemented to confirm there are no exceptions or funny business going on after a code change.
 
 An easy way to disable this is by not even building the functions. To exclude a POU from build, click on the POU -> Properties -> Build Tab -> Exclude from build. This makes the compiler oblivious to the function. Please note, if you have used the POU in the application you will get a compiler error.
 

@@ -93,9 +93,9 @@ vTest9.ExecTime := LTIME() - vTest9.OldTime;
 
 Addition and multiplication of INT/REAL/DINT had no real impact other than memory consumption.
 
-Division is a bit different though. Seems REAL is a whole milisecond faster than any integer division. Could it be that the compiler casts these integers to reals under the hood or what is happening here? It is probably that the compiler has to have an extra step to do the actual division.
+Division is a bit different though. Seems REAL is a whole millisecond faster than any integer division. Could it be that the compiler casts these integers to reals under the hood or what is happening here? It is probably that the compiler has to have an extra step to do the actual division.
 
-I have been told many times that we need to choose data type sizes that match our PLC. If the PLC is a 32bit processor we should use only DINTs, otherwise if its a 16 bit processor, then INTs. It's quite hard to find a 16bit computer in 2022, does the statement still hold? The measurements show equal(within measurement tolerance) times for INTs and DINTs. Shouldn't the ALU just padd an INT will zeros for the most significant bits?
+I have been told many times that we need to choose data type sizes that match our PLC. If the PLC is a 32bit processor we should use only DINTs, otherwise if its a 16 bit processor, then INTs. It's quite hard to find a 16bit computer in 2022, does the statement still hold? The measurements show equal(within measurement tolerance) times for INTs and DINTs. Shouldn't the ALU just pad an INT will zeros for the most significant bits?
 
 Of course these measurements are done on my PC with Codesys Simulation mode on so the measurements will wary from PC to PC, PLC to PLC.
 

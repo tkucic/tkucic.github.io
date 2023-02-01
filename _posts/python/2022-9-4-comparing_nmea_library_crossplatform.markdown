@@ -29,7 +29,7 @@ This is what I observed in terms of speed.
 
 Even though these PLCs on paper appear to be slow, the code still has to compiled. Compiling brings speed of execution, compared to Python which is an interpreted language. Still, Python is quite slow, averaging 300% slower than C.
 
-Speed of programming -it is a different story. It took me 2 weeks to implement the same in Structured text, 3 weeks in ANSI C, while it took me couple of days to implement the same in python. Granted, my skills with Python and IEC are good, but with ANSI C, they are at begginer level, and this project was also a learning experience for me.
+Speed of programming -it is a different story. It took me 2 weeks to implement the same in Structured text, 3 weeks in ANSI C, while it took me couple of days to implement the same in python. Granted, my skills with Python and IEC are good, but with ANSI C, they are at beginner level, and this project was also a learning experience for me.
 
 Flexibility and changeability - also a different story. With Python, I am able to do quite rapid changes, even during runtime, on how the library works. Dictionaries make message format selection a breeze. IEC(ST) and ANSI C have no notion of dictionaries (unless you build it yourself) so the message format selector is one giant CASE machine.
 
@@ -44,7 +44,7 @@ My profiling showed also that 90% of the load comes from the XOR calculation fun
     $GPGLL,5057.970,N,00146.110,E,142451,A*27 -> 39
     $GPVTG,089.0,T,,,15.2,N,,,*53 -> 83
     
-    Function doesnt check for $/! existance to speed up execution,
+    Function doesn't check for $/! existence to speed up execution,
     check your message is valid before calculating checksum*/
 int calcXORChecksum(char* sentence){
     unsigned char i;
