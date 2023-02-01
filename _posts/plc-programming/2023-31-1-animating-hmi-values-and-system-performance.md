@@ -16,7 +16,7 @@ Take a look at this video first, can you tell which system is performing better?
 
 If you said System 2 you would be wrong. Both visualizations are running on the same PLC and using the same data. Let us see what is happening here!
 
-#### System performance is in the eye of the beholder
+### System performance is in the eye of the beholder
 
 Most of the time a system is perceived to be slow if the user does not get any continuous feedback. Even worse, performance evaluation will be bad if the values change infrequently on the screen e.g. stuttering.
 
@@ -24,7 +24,7 @@ I heard a story about a computer in the 80s. Most of the computers of that time 
 
 Similar thing happens to the data presented on the HMI screens.
 
-#### Technical problem
+### Technical problem
 
 To make something look nice and smooth to the human eye, we need a frame rate of about 24 frames per second. If we plug in a variable coming from the field directly to the visualization element, in order to make it look smooth, we would need to increase the data rate quite significantly.
 
@@ -32,11 +32,11 @@ Lets take ModbusTCP for example, running at 500ms cycle and the data a simple si
 
 The data would look something like this:
 
-![a](/assets/post_images/animating-hmi-values-comm-data.png){:class="img-responsive"}
+![Example of a fine tuned ramped signal](/assets/post_images/animating-hmi-values-comm-data.png){:class="img-responsive"}
 
 At 500ms modbus update rate we get 2 FPS on the screen. This is far from perfect. In order to get it up to 24 FPS, the modbus update rate would need to be 24ms. The poor PLC would be sending the data and that is the only thing it could do. Slower data rates further exacerbate the problem however.
 
-#### Animation to the rescue
+### Animation to the rescue
 
 It is not necessary to increase the data rate to 24 ms, we just animate it. In this way we can get even higher frame rates than 24 FPS. We just need to run the HMI visualization faster than the incoming data and approximate the "missing data". This wizardry of animation is included in many HMI vendors that make life easier, but there are also an equal amount of them that don't. Here are some ideas on how to do animation by your self with the usual pros and cons.
 
@@ -46,17 +46,17 @@ I use Codesys for most of my posts and this one is no different. Here is a nice 
 
 Animation however comes with a negative side effect as our animated data is decoupled slightly from the source. Solutions I present in this post introduce either a delayed response value or shifting in phase of the signal. This means that, even if it looks faster, we are just fooling our eyes. All solutions will also spend CPU time so this should be used only where necessary.
 
-#### Animating using inertia (a simple ramp)
+### Animating using inertia (a simple ramp)
 
 Any value can have inertia. The communicated data from the modbus has no inertia, meaning the data in the destination changes instantly upon receiving new data. This is the main reason of jitter. To overcome this, we can introduce a simple ramp function with a fixed slope to introduce inertia. Inertia is defined as resistance to change so by ramping the communicated value we can make the needle move smoothly across the screen.
 
 If the communicated data is predictable and its rate of change is fixed, the output signal of the ramp might look something like this.
 
-![b](/assets/post_images/animating-hmi-values-dynamic-inertia.png){:class="img-responsive"}
+![Example of a fine tuned ramped signal](/assets/post_images/animating-hmi-values-dynamic-inertia.png){:class="img-responsive"}
 
 However, the communicated data depends on the real world values which are unpredictable. The simple ramp approach fails miserably when the communicated data changes rapidly. Then the output signal of the ramp might be very late or not even reaching the peaks, giving wrong information.
 
-![c](/assets/post_images/animating-hmi-values-inertia-when-ramp-is-too-slow.png){:class="img-responsive"}
+![Problem when slope of the ramp is set too low](/assets/post_images/animating-hmi-values-inertia-when-ramp-is-too-slow.png){:class="img-responsive"}
 
 We will tackle this problem in the next chapter.
 
@@ -91,13 +91,13 @@ END_IMPLEMENTATION
 inertialData := simpleRamp(inertialData, txData, inertialSlope);
 ```
 
-#### Animating using dynamic inertia (still a simple ramp)
+### Animating using dynamic inertia (still a simple ramp)
 
 There is a simple solution to the rate of change of the communicated data. We simply calculate the difference between two points in time. Once we receive new data we apply the ramp and store the value in memory. However, if we would leave it like this, the ramp would again produce the same output value as the communicated data, producing no animation effect. We have to multiply the difference of the signal with a scaler. The scaler, just a number between 0 and 1, is responsible for creating the interpolated points in between. At 1, there will be no interpolation points, at 0.5 there will be two, at 0.3333 there will be three and so on. Because the communicated data rate of change is dynamic so are our interpolation points and the distances between. In translation, if the rate of change is high, so will be the slope of the ramp between points. If the rate of change is low so will be the slop of the ramp. The output value of the ramp will closely follow the curves of the real world signal with a slight offset in phase.
 
 Here is how that might look like.
 
-![b](/assets/post_images/animating-hmi-values-dynamic-inertia.png){:class="img-responsive"}
+![Dynamic inertia, output signal](/assets/post_images/animating-hmi-values-dynamic-inertia.png){:class="img-responsive"}
 
 Here is an example of calculating the difference of the incoming signals rate of change.
 
@@ -113,7 +113,7 @@ dynInertialData := simpleRamp(dynInertialData, txData, ABS(dtRaw)* dynInertiaSca
 
 Using the simple ramp approach might not be that good if memory and CPU time is crucial. This is especially the case if there are a lot of values that need this kind of animation. Let us see in the next chapter how we could optimize this.
 
-#### Animating using linear interpolation (Lerp)
+### Animating using linear interpolation (Lerp)
 
 According to Wikipedia:
 
@@ -160,13 +160,13 @@ This approach uses much less of the CPUs time and memory so it should be better 
 
 When applied, the output signal would look something like this:
 
-![d](/assets/post_images/animating-hmi-values-linear-interpolation.png){:class="img-responsive"}
+![Linear interpolation, output signal](/assets/post_images/animating-hmi-values-linear-interpolation.png){:class="img-responsive"}
 
 From the trace we can see that the lerp curve doesnt perfectly match the real world value but it is good enough for most cases. Especially when it is more efficient than the other solutions I have found. It also solves the variable data rate problem at the same time and it keeps the amount of parameters quite low.
 
-#### Side to side comparisons
+### Side to side comparisons
 
-![e](/assets/post_images/animating-hmi-values-side-to-side.png){:class="img-responsive"}
+![Side to side comparison using Trace](/assets/post_images/animating-hmi-values-side-to-side.png){:class="img-responsive"}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IqfQPiHt9jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
