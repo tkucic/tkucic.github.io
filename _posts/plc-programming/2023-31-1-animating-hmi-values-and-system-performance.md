@@ -136,8 +136,6 @@ float lerp(float v0, float v1, float t) {
 }
 ```
 
-One thing to note here that I couldn't find any information what this float t is. Maybe someone wants to take this opportunity to contribute to Wikipedia? In our application, the t is the scaler (interpolation knee-point).
-
 This can be written in structured text the same way, as a function that returns a real.
 
 ```pascal
@@ -164,11 +162,13 @@ When applied, the output signal would look something like this:
 
 From the trace we can see that the lerp curve doesnt perfectly match the real world value but it is good enough for most cases. Especially when it is more efficient than the other solutions I have found. It also solves the variable data rate problem at the same time and it keeps the amount of parameters quite low.
 
+This implementation can also be called Exponential Moving Average Low Pass filter.
+
 ### Side to side comparisons
 
 ![Side to side comparison using Trace](/assets/post_images/animating-hmi-values-side-to-side.png){:class="img-responsive"}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IqfQPiHt9jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XKmFBYslUUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Related posts in this category
 
