@@ -34,6 +34,7 @@ github_username:  tkucic
 linkedin_username: tonikucic
 issues_repo: tkucic/tkucic.github.io
 show_excerpts: true
+google_analytics : true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
