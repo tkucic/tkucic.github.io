@@ -6,6 +6,21 @@ permalink: /portfolio/
 
 ## Featured portfolio projects
 
+### QueueLib
+
+This repo is a collection of all kinds of Queue function blocks. It is primarily used for educational purposes. The library is meant for Codesys V3 and its derivative IDEs for use in PLC programming. Function blocks are developed using OOIP using only methods.
+
+Types of Queues:
+
+- Standard Queue
+- Circular Queue
+- First word fall trough Queue
+- Unordered Queue
+- Ordered Queue
+- Stack
+
+Join the project here --> [REPO](https://github.com/tkucic/QueueLib)
+
 ### ModbusXml
 
 ![ModbusXml](https://raw.github.com/tkucic/modbusXml/master/img/screenshot.png){:class="img-responsive"}
