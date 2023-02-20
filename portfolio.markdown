@@ -21,6 +21,8 @@ Types of Queues:
 
 Join the project here --> [REPO](https://github.com/tkucic/QueueLib)
 
+---
+
 ### ModbusXml
 
 ![ModbusXml](https://raw.github.com/tkucic/modbusXml/master/img/screenshot.png){:class="img-responsive"}
@@ -28,6 +30,8 @@ Join the project here --> [REPO](https://github.com/tkucic/QueueLib)
 These programs use pyModbus package to implement a Modbus client class, GUI for that client and a server. Configuration of client and the server can be done from the register and device configuration xml. The user of the program just needs to modify the xml file and run the server and GUI.
 
 Join the project here --> [REPO](https://github.com/tkucic/modbusXml)
+
+---
 
 ### UniTest (Universal PLC Unit Test library)
 
